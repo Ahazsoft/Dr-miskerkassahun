@@ -1,0 +1,100 @@
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #faf6f0;
+}
+
+.home-left-pane {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8rem 4rem 4rem 4rem;
+}
+
+.home-content {
+  max-width: 550px;
+  width: 100%;
+}
+
+.home-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-dark {
+  color: #5c534e;
+}
+
+.title-orange {
+  color: #e58244;
+}
+
+.home-subtitle {
+  font-size: 1.1rem;
+  color: #4a4542;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.portfolio-btn {
+  display: inline-block;
+  background-color: #38312e;
+  color: #ffffff;
+  padding: 0.9rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-btn:hover {
+  background-color: #e58244;
+}
+
+.home-right-pane {
+  flex: 1;
+  position: relative;
+  background-color: #d1c7bc;
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (max-width: 968px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .home-left-pane {
+    padding: 7rem 2rem 3rem 2rem;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .home-right-pane {
+    height: 450px;
+    width: 100%;
+  }
+}
