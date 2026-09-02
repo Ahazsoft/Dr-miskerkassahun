@@ -4,13 +4,13 @@ import img1 from '../assets/images/img1.jpg';
 import Affilations from './Affiliations';
 import About from './About';
 import Gallery from './Gallery';
+import Services from './Services';
+import Contact from './Contact';
 
 export default function Home() {
   return (
     <>
-      {/* =====================================================
-          HOME HERO SECTION
-      ====================================================== */}
+  
       <section
         className="
           w-full
@@ -36,10 +36,6 @@ export default function Home() {
             lg:min-h-screen
           "
         >
-
-          {/* =================================================
-              LEFT SIDE - CONTENT
-          ================================================== */}
           <div
             className="
               w-full
@@ -84,10 +80,6 @@ export default function Home() {
                 animate-[slideUp_1.3s_cubic-bezier(0.16,1,0.3,1)_0.2s_forwards]
               "
             >
-
-              {/* =================================================
-                  NAME
-              ================================================== */}
               <h1
                 className="
                   flex
@@ -131,11 +123,6 @@ export default function Home() {
                 </span>
 
               </h1>
-
-
-              {/* =================================================
-                  DESCRIPTION
-              ================================================== */}
               <p
                 className="
                   w-full
@@ -173,11 +160,6 @@ export default function Home() {
                 <br className="hidden sm:block" />
                 Volunteer.
               </p>
-
-
-              {/* =================================================
-                  SEE PORTFOLIO BUTTON
-              ================================================== */}
               <Link
   to="/about"
   className="
@@ -203,7 +185,8 @@ export default function Home() {
     lineHeight: '1',
     fontWeight: '700',
     letterSpacing: '2.5px',
-    borderRadius: '2px',
+    clipPath: 'polygon(0 0, 100% 0, 100% 72%, 86% 100%, 0 100%)',
+    boxShadow: '0 10px 18px rgba(0, 0, 0, 0.12)',
     textDecoration: 'none',
   }}
 >
@@ -304,19 +287,11 @@ export default function Home() {
         `}</style>
 
       </section>
-
-
-      {/* =====================================================
-          AFFILIATIONS SECTION
-      ====================================================== */}
       <Affilations />
-
-
-      {/* =====================================================
-          ABOUT SECTION
-      ====================================================== */}
       <About />
-      <Gallery/>
+      <Services/>
+      
+
 
     </>
   );

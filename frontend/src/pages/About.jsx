@@ -34,7 +34,9 @@ export default function About() {
                   className="about-image"
                 />
               </div>
-              <div className="about-orange-box"></div>
+              <div className="about-orange-box">
+                <span>Dr. Misker<br />Kassahun</span>
+              </div>
             </div>
           </div>
 
@@ -57,7 +59,7 @@ export default function About() {
         .about-section {
           width: 100%;
           min-height: 100vh;
-          background: #faf6f0;
+          background:white;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -93,11 +95,18 @@ export default function About() {
           margin: 0 0 24px 0 !important;
           padding: 0 !important;
           color: #28221f;
-          font-size: 60px;
-          line-height: 1.05;
+          font-size: clamp(36px, 4vw, 42px);
+          line-height: 1.2;
           font-weight: 700;
-          letter-spacing: -1.5px;
+          letter-spacing: -1px;
           text-align: left !important;
+        }
+
+        .about-title::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0;
         }
 
         .about-text {
@@ -165,8 +174,8 @@ export default function About() {
           position: absolute;
           bottom: 0;
           left: 0;
-          width: 96px;
-          height: 96px;
+          width: 112px;
+          height: 112px;
           background: #f29452;
           clip-path: polygon(
             0 0,
@@ -176,6 +185,21 @@ export default function About() {
             0 100%
           );
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          color: #ffffff;
+          font-size: 17px;
+          font-weight: 800;
+          line-height: 1.1;
+          letter-spacing: 0.6px;
+          text-transform: uppercase;
+        }
+
+        .about-orange-box span {
+          width: 100%;
+          text-align: center;
         }
 
         /* Let's Connect Section Styles */
@@ -200,9 +224,10 @@ export default function About() {
 
         .connect-title {
           color: #28221f;
-          font-size: 50px;
+          font-size: clamp(32px, 3vw, 42px);
+          line-height: 1.2;
           font-weight: 700;
-          letter-spacing: -1.2px;
+          letter-spacing: -1px;
           margin: 0;
         }
 
@@ -216,12 +241,15 @@ export default function About() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          clip-path: polygon(0 0, 100% 0, 100% 75%, 85% 100%, 0 100%);
-          transition: background 0.2s ease;
+          clip-path: polygon(0 0, 100% 0, 100% 72%, 86% 100%, 0 100%);
+          transition: transform 0.25s ease, filter 0.25s ease, background 0.2s ease;
+          box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
         }
 
         .connect-button:hover {
           background: #3b4045;
+          transform: translateY(-2px);
+          filter: brightness(1.03);
         }
 
         .arrow {
@@ -320,8 +348,10 @@ export default function About() {
             height: 88% !important;
           }
           .about-orange-box {
-            width: 70px !important;
-            height: 70px !important;
+            width: 82px !important;
+            height: 82px !important;
+            padding: 8px !important;
+            font-size: 12px !important;
           }
           .connect-section {
             padding: 40px 24px 60px 24px;

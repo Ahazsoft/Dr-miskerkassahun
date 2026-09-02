@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stethoscope, Users, Globe, BookOpen } from 'lucide-react';
+import { Stethoscope, Users, Globe, BookOpen, ArrowUpRight } from 'lucide-react';
 
 export default function Principles() {
   const principles = [
@@ -8,167 +8,502 @@ export default function Principles() {
       desc: "A medical doctor and public health expert with an MD from St. Paul's Hospital Millennium Medical College and an MPH from the Johns Hopkins Bloomberg School of Public Health.",
       dark: false,
       icon: Stethoscope,
-      label: "",
-      height: "460px",
     },
     {
       title: "Leadership &\nCommunity\nImpact",
       desc: "Co-founded GIV Society Ethiopia and launched projects through Ensight Global Consultancy to build trusting relationships, organize health fairs, and create opportunities for others.",
       dark: true,
       icon: Users,
-      label: "",
-      height: "490px",
     },
     {
       title: "Global\nAdvocacy &\nRepresentation",
       desc: "Represented Ethiopia on international pageant stages to advocate for mental health, health equity, and vibrant African stories.",
       dark: false,
-      label: "",
       icon: Globe,
-      height: "450px",
     },
     {
       title: "Personal\nPassions &\nCulture",
       desc: "A bookworm who loves psychological thrillers, coffee-fueled conversations, event curation, traditional Ethiopian feasts, and serving as a proud ambassador of Ethiopian culture.",
       dark: true,
       icon: BookOpen,
-      label: "",
-      height: "480px",
     }
   ];
 
   return (
-    <div style={{
-      width: '100%',
-      minHeight: '100vh',
-      backgroundColor: '#ffffff',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '96px 24px'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        width: '100%',
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
-      }}>
-        
-        {/* Section Heading */}
-        <div style={{
-          width: '100%',
-          borderTop: 'none',
-          border: 'none',
-          paddingTop: '0px',
-          marginBottom: '64px',
-          textAlign: 'left'
-        }}>
-          <h3 style={{
-            fontSize: '36px',
-            fontWeight: 'bold',
-            color: '#28221f',
-            letterSpacing: '-0.025em',
-            margin: 0
-          }}>
-            Core Principles
-          </h3>
-        </div>
+    <>
+      <section className="principles-section">
+        <div className="principles-container">
 
-        {/* Boxes Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-          gap: '24px',
-          width: '100%',
-          alignItems: 'start'
-        }}>
-          {principles.map((item, idx) => {
-            const IconComponent = item.icon;
-            return (
-              <div 
-                key={idx}
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: item.height,
-                  backgroundColor: item.dark ? '#3b4042' : '#e9e3da',
-                  color: item.dark ? '#f4efe6' : '#28221f',
-                  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                  clipPath: 'polygon(0 0, 100% 0, 100% 93%, 93% 100%, 0 100%)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  padding: '28px 24px 36px 24px',
-                  boxSizing: 'border-box'
-                }}
-              >
-                <div>
-                  {/* Top Icon and Label row */}
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    justifyContent: 'space-between',
-                    marginBottom: '32px'
-                  }}>
-                    <div style={{
-                      padding: '10px',
-                      backgroundColor: item.dark ? '#f29452' : '#3b4042',
-                      color: item.dark ? '#3b4042' : '#f4efe6',
-                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                      clipPath: 'polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginLeft: '-4px',
-                      marginTop: '-4px'
-                    }}>
-                      <IconComponent style={{ width: '18px', height: '18px' }} />
+          {/* Heading */}
+          <div className="principles-heading">
+            <div className="heading-line"></div>
+
+            <h3>
+              Core <span>Principles</span>
+            </h3>
+
+            <p>
+              The values, experiences, and passions that shape my work
+              and the impact I strive to create.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="principles-grid">
+            {principles.map((item, idx) => {
+              const IconComponent = item.icon;
+
+              return (
+                <article
+                  key={idx}
+                  className={`principle-card ${
+                    item.dark ? 'dark-card' : 'light-card'
+                  }`}
+                >
+
+                  {/* Top */}
+                  <div className="card-content">
+
+                    {/* Icon */}
+                    <div className="icon-wrapper">
+                      <IconComponent size={22} strokeWidth={1.8} />
                     </div>
-                    {item.label && (
-                      <span style={{
-                        fontSize: '10px',
-                        letterSpacing: '0.15em',
-                        fontWeight: 'bold',
-                        color: item.dark ? '#f29452' : '#7a7067',
-                        marginTop: '-2px'
-                      }}>
-                        {item.label}
-                      </span>
-                    )}
+
+                    {/* Title */}
+                    <h4>{item.title}</h4>
+
+                    {/* Description */}
+                    <p>{item.desc}</p>
                   </div>
 
-                  {/* Title */}
-                  <h4 style={{
-                    fontSize: '24px',
-                    fontWeight: 'bold',
-                    marginBottom: '20px',
-                    letterSpacing: '-0.02em',
-                    lineHeight: '1.2',
-                    whiteSpace: 'pre-line'
-                  }}>
-                    {item.title}
-                  </h4>
+                  {/* Bottom arrow */}
+                  <div className="card-bottom">
+                    <span>Learn more</span>
 
-                  {/* Description */}
-                  <p style={{
-                    fontSize: '14px',
-                    lineHeight: '1.65',
-                    color: item.dark ? '#c8bfb5' : '#5c534e',
-                    margin: 0
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
+                    <div className="arrow-wrapper">
+                      <ArrowUpRight size={19} strokeWidth={2} />
+                    </div>
+                  </div>
 
-                <div />
-              </div>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
+
         </div>
-      </div>
-    </div>
+      </section>
+
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+
+        .principles-section {
+          width: 100%;
+          min-height: 100vh;
+          background: white;
+          padding: 110px 32px;
+          overflow: hidden;
+        }
+
+        .principles-container {
+          width: 100%;
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+
+
+        .principles-heading {
+          width: 100%;
+          margin-bottom: 65px;
+          position: relative;
+        }
+
+        .heading-line {
+          width: 65px;
+          height: 4px;
+          background: #f29452;
+          margin-bottom: 22px;
+        }
+
+        .principles-heading h3 {
+          margin: 0;
+          color: #28221f;
+          font-size: clamp(38px, 5vw, 58px);
+          line-height: 1.05;
+          font-weight: 700;
+          letter-spacing: -0.045em;
+        }
+
+        .principles-heading h3 span {
+          color: #f29452;
+        }
+
+        .principles-heading p {
+          max-width: 620px;
+          margin: 20px 0 0;
+          color: #3f3b38;
+          font-size: 15px;
+          line-height: 1.7;
+        }
+
+        .principles-grid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 25px;
+          align-items: stretch;
+        }
+
+        .principle-card {
+          position: relative;
+          min-height: 450px;
+          padding: 34px 28px 28px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          overflow: hidden;
+
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 93%,
+            93% 100%,
+            0 100%
+          );
+
+          box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.12);
+
+          transition:
+            transform 0.4s cubic-bezier(.2,.8,.2,1),
+            box-shadow 0.4s ease,
+            background-color 0.4s ease;
+        }
+
+        .principle-card:hover {
+          transform: translateY(-12px);
+          box-shadow:
+            0 30px 50px rgba(0, 0, 0, 0.22);
+        }
+
+        /* subtle orange glow */
+        /* orange bottom accent */
+        .principle-card::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 4px;
+          left: 0;
+          bottom: 0;
+          background: #f29452;
+          transition: width 0.45s ease;
+        }
+
+        .principle-card:hover::after {
+          width: 100%;
+        }
+
+        .light-card {
+          background: #e9e3da;
+          color: #28221f;
+        }
+
+        .dark-card {
+          background: #3b4042;
+          color: #f4efe6;
+        }
+
+        .card-content {
+          position: relative;
+          z-index: 2;
+        }
+        .icon-wrapper {
+          width: 54px;
+          height: 54px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          margin-bottom: 34px;
+
+          transition:
+            transform 0.4s cubic-bezier(.2,.8,.2,1),
+            background-color 0.3s ease;
+        }
+
+        .light-card .icon-wrapper {
+          background: #3b4042;
+          color: #f4efe6;
+        }
+
+        .dark-card .icon-wrapper {
+          background: #f29452;
+          color: #3b4042;
+        }
+
+        .principle-card:hover .icon-wrapper {
+          transform: translateY(-5px) rotate(-5deg);
+        }
+        .principle-card h4 {
+          position: relative;
+          z-index: 2;
+
+          margin: 0 0 20px;
+
+          font-size: 25px;
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: -0.025em;
+
+          white-space: pre-line;
+
+          transition:
+            color 0.3s ease,
+            transform 0.3s ease;
+        }
+
+        .principle-card:hover h4 {
+          transform: translateX(3px);
+        }
+
+        .light-card h4 {
+          color: #28221f;
+        }
+
+        .dark-card h4 {
+          color: #f4efe6;
+        }
+
+        .principle-card p {
+          position: relative;
+          z-index: 2;
+
+          margin: 0;
+
+          font-size: 14.5px;
+          line-height: 1.75;
+
+          transition: color 0.3s ease;
+        }
+
+        .light-card p {
+          color: #4d4540;
+        }
+
+        .dark-card p {
+          color: #d4cbc0;
+        }
+
+        .card-bottom {
+          position: relative;
+          z-index: 3;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          margin-top: 30px;
+
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.13em;
+          text-transform: uppercase;
+        }
+
+        .light-card .card-bottom {
+          color: #5c534e;
+        }
+
+        .dark-card .card-bottom {
+          color: #d4cbc0;
+        }
+
+        .arrow-wrapper {
+          width: 42px;
+          height: 42px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          transition:
+            transform 0.35s ease,
+            background-color 0.35s ease,
+            color 0.35s ease;
+        }
+
+        .light-card .arrow-wrapper {
+          background: #3b4042;
+          color: #fff;
+        }
+
+        .dark-card .arrow-wrapper {
+          background: #f29452;
+          color: #3b4042;
+        }
+
+        .principle-card:hover .arrow-wrapper {
+          transform: rotate(45deg);
+        }
+
+        @media (max-width: 1100px) {
+
+          .principles-section {
+            padding: 90px 28px;
+          }
+
+          .principles-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+          }
+
+          .principle-card {
+            min-height: 420px;
+          }
+
+          .principle-card h4 {
+            font-size: 27px;
+          }
+
+          .principle-card p {
+            font-size: 15px;
+          }
+        }
+
+
+        @media (max-width: 700px) {
+
+          .principles-section {
+            padding: 75px 20px;
+          }
+
+          .principles-heading {
+            margin-bottom: 45px;
+          }
+
+          .heading-line {
+            width: 50px;
+            height: 3px;
+            margin-bottom: 18px;
+          }
+
+          .principles-heading h3 {
+            font-size: 40px;
+          }
+
+          .principles-heading p {
+            font-size: 14px;
+            margin-top: 16px;
+          }
+
+          .principles-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+
+          .principle-card {
+            min-height: auto;
+            padding: 32px 25px 25px;
+          }
+
+          .icon-wrapper {
+            width: 52px;
+            height: 52px;
+            margin-bottom: 28px;
+          }
+
+          .principle-card h4 {
+            font-size: 28px;
+            margin-bottom: 18px;
+          }
+
+          .principle-card p {
+            font-size: 15px;
+            line-height: 1.7;
+          }
+
+          .card-bottom {
+            margin-top: 40px;
+          }
+
+          /*
+            Disable large movement on touch screens
+            so the cards don't feel jumpy.
+          */
+          .principle-card:hover {
+            transform: translateY(-6px);
+          }
+        }
+
+        @media (max-width: 420px) {
+
+          .principles-section {
+            padding: 60px 15px;
+          }
+
+          .principles-heading {
+            margin-bottom: 35px;
+          }
+
+          .principles-heading h3 {
+            font-size: 34px;
+          }
+
+          .principles-heading p {
+            font-size: 13.5px;
+            line-height: 1.65;
+          }
+
+          .principles-grid {
+            gap: 16px;
+          }
+
+          .principle-card {
+            padding: 28px 21px 22px;
+          }
+
+          .icon-wrapper {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 25px;
+          }
+
+          .principle-card h4 {
+            font-size: 24px;
+            line-height: 1.2;
+          }
+
+          .principle-card p {
+            font-size: 14px;
+            line-height: 1.7;
+          }
+
+          .card-bottom {
+            margin-top: 32px;
+            font-size: 10px;
+          }
+
+          .arrow-wrapper {
+            width: 38px;
+            height: 38px;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .principle-card,
+          .principle-card *,
+          .principle-card::before,
+          .principle-card::after {
+            transition: none !important;
+          }
+
+          .principle-card:hover {
+            transform: none;
+          }
+        }
+      `}</style>
+    </>
   );
 }

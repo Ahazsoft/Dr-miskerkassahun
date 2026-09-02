@@ -91,8 +91,10 @@ export default function Navbar() {
                 letterSpacing: '2.5px',
                 textDecoration: 'none',
                 whiteSpace: 'nowrap',
-                display: 'inline-block',
-                borderRadius: '2px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                clipPath: 'polygon(0 0, 100% 0, 100% 75%, 86% 100%, 0 100%)',
                 boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
               }}
               className="transition-all duration-300 hover:bg-[#ff9f5a] hover:shadow-lg hover:-translate-y-0.5"
@@ -142,7 +144,10 @@ export default function Navbar() {
               letterSpacing: '2.5px',
               textDecoration: 'none',
               marginTop: '8px',
-              borderRadius: '2px'
+              clipPath: 'polygon(0 0, 100% 0, 100% 75%, 86% 100%, 0 100%)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
             className="transition-all duration-300 hover:bg-[#ff9f5a]"
           >

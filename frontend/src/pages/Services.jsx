@@ -1,1015 +1,801 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Plus, Minus } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const servicesData = [
   {
-    id: '01',
+    id: 'I',
     title: 'Healthcare Consulting',
-    shortTitle: 'Healthcare',
+    subtitle: 'Strategic health programs & medical advisory',
     description:
-      'Expert medical consulting, public health advisory, and strategic health program development tailored for institutions and initiatives.',
+      'Misker is a medical doctor (general practitioner) and an MPH holder from at Johns Hopkins University. She is skilled in healthcare leadership, health policy, health communication, running nonprofit organizations, advocacy work, and project management.',
+    tags: ['Clinical Strategy', 'Public Health', 'Program Design'],
   },
   {
-    id: '02',
-    title: 'Digital Advertisement / Promotion',
-    shortTitle: 'Digital Promotion',
+    id: 'II',
+    title: 'Digital Promotion & Modeling',
+    subtitle: 'Brand representation & 7+ years modeling',
     description:
-      'Professional modeling and promotional services with over 7 years of experience. She has represented and promoted organizations such as HabariDoc Digital Health Services, Abyssinia Bank, Great Lakes Society Vancouver, Aleph Design, and Miss Africa Beauty Queen among many others.',
+      'Professional modeling and promotional services with over 7 years of experience. Represented organizations such as HabariDoc Digital Health Services, Abyssinia Bank, and Miss Africa Beauty Queen.',
+    tags: ['Brand Visibility', 'Campaigns', 'Media'],
   },
   {
-    id: '03',
+    id: 'III',
     title: 'Public Speaking',
-    shortTitle: 'Public Speaking',
+    subtitle: 'Keynotes on leadership & youth advocacy',
     description:
-      'Engaging talks and presentations on public health, youth empowerment, leadership, personal development, and cultural representation.',
+      'Misker has been a panelist and trainer at multiple international and national conferences, events, and webinars. She is especially skilled in delivering sessions on professional development, volunteerism, community service, and mental health. Here are some of her notable speaking engagements.',
+    tags: ['Leadership', 'Youth Advocacy', 'Keynotes'],
   },
   {
-    id: '04',
-    title: 'Event Planning & Management',
-    shortTitle: 'Event Management',
+    id: 'IV',
+    title: 'Event Management',
+    subtitle: 'Conferences, campaigns & community events',
     description:
-      'Comprehensive coordination and management for professional conferences, community initiatives, corporate events, campaigns, and special occasions.',
+      'Misker is skilled in planning diverse events such as professional development events, conferences, webinars, pageants/beauty contests, curated entertainment events, and medical campaigns.',
+    tags: ['Planning', 'Coordination', 'Execution'],
   },
   {
-    id: '05',
+    id: 'V',
     title: 'Collaboration',
-    shortTitle: 'Collaboration',
+    subtitle: 'Multidisciplinary ventures & partnerships',
     description:
-      'Partnering on creative projects, community-building programs, advocacy campaigns, public health initiatives, and multidisciplinary ventures.',
+      'Misker is open to collaboration with organizations, businesses, networks, professional associations, social media platforms and many more especially those focused on healthcare, community engagement, mental health and professional development.',
+    tags: ['Partnerships', 'Innovation', 'Impact'],
   },
 ];
 
 export default function Services() {
-  const [activeId, setActiveId] = useState('02');
+  const [activeId, setActiveId] = useState('01');
 
-  const toggleService = (id) => {
-    setActiveId(activeId === id ? null : id);
+  const activeService =
+    servicesData.find((s) => s.id === activeId) || servicesData[0];
+
+  const handleServiceClick = (id) => {
+    setActiveId((current) => (current === id ? null : id));
   };
 
   return (
     <>
       <section className="services-section">
-
         <div className="services-container">
 
-          {/* ==========================================
-              HEADER
-          =========================================== */}
+          {/* HEADER */}
           <div className="services-header">
+            <span className="section-eyebrow">WHAT I DO</span>
 
-            <div className="services-label">
-              <span className="label-line"></span>
-              <span>WHAT I DO</span>
-            </div>
+            <h2 className="section-heading">
+              Featured Expertise &amp; Services
+            </h2>
 
-            <div className="header-content">
-
-              <h1 className="services-title">
-                My <span>Services</span>
-              </h1>
-
-              <p className="services-intro">
-                Professional expertise, creative collaboration, and
-                meaningful solutions designed to create lasting impact.
-              </p>
-
-            </div>
-
+            <p className="services-intro">
+              Explore the areas where experience, expertise, and purpose come
+              together to create meaningful impact.
+            </p>
           </div>
 
+          {/* DESKTOP / TABLET */}
+          <div className="services-split">
 
-          {/* ==========================================
-              SERVICES
-          =========================================== */}
-          <div className="services-list">
+            {/* LEFT NAVIGATION */}
+            <div className="services-nav">
+              {servicesData.map((service) => {
+                const isActive = activeId === service.id;
 
-            {servicesData.map((service) => {
-              const isActive = activeId === service.id;
+                return (
+                  <div key={service.id} className="service-item-wrapper">
 
-              return (
-                <div
-                  key={service.id}
-                  className={`service-card ${
-                    isActive ? 'service-card-active' : ''
-                  }`}
-                  onClick={() => toggleService(service.id)}
-                >
-
-                  {/* =================================
-                      TOP ROW
-                  ================================= */}
-                  <div className="service-top">
-
-                    {/* Number */}
-                    <div className="service-number">
-                      <span>{service.id}</span>
-                    </div>
-
-
-                    {/* Title */}
-                    <div className="service-heading">
-
-                      <span className="service-category">
-                        SERVICE
-                      </span>
-
-                      <h2>
-                        {service.title}
-                      </h2>
-
-                    </div>
-
-
-                    {/* Arrow */}
-                    <button
-                      type="button"
-                      className={`service-icon ${
-                        isActive ? 'service-icon-active' : ''
+                    {/* SERVICE BUTTON */}
+                    <div
+                      className={`service-nav-item ${
+                        isActive ? 'active' : ''
                       }`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleService(service.id);
+                      onClick={() => handleServiceClick(service.id)}
+                      onKeyDown={(event) => {
+                        if (
+                          event.key === 'Enter' ||
+                          event.key === ' '
+                        ) {
+                          event.preventDefault();
+                          handleServiceClick(service.id);
+                        }
                       }}
-                      aria-label={
-                        isActive
-                          ? `Close ${service.title}`
-                          : `Open ${service.title}`
-                      }
+                      role="button"
+                      tabIndex={0}
+                      aria-expanded={isActive}
                     >
-                      {isActive ? (
-                        <Minus size={20} strokeWidth={1.8} />
-                      ) : (
-                        <ArrowUpRight size={20} strokeWidth={1.8} />
-                      )}
-                    </button>
+                      <div className="nav-item-left">
 
-                  </div>
+                        <span className="nav-id">
+                          {service.id}
+                        </span>
 
-
-                  {/* =================================
-                      EXPANDED CONTENT
-                  ================================= */}
-                  <div
-                    className={`service-details ${
-                      isActive ? 'service-details-open' : ''
-                    }`}
-                  >
-
-                    <div className="service-details-inner">
-
-                      <div className="details-line"></div>
-
-                      <div className="details-content">
-
-                        <p>
-                          {service.description}
-                        </p>
-
-                        <span className="details-number">
-                          {service.id} / 05
+                        <span className="nav-title">
+                          {service.title}
                         </span>
 
                       </div>
 
+                      <div className="nav-arrow">
+                        <ArrowUpRight size={18} />
+                      </div>
+                    </div>
+
+                    {/* MOBILE DETAILS */}
+                    <div
+                      className={`mobile-service-details ${
+                        isActive ? 'mobile-open' : ''
+                      }`}
+                    >
+                      <div className="mobile-details-inner">
+
+                        
+
+                        <h3>
+                          {service.title}
+                        </h3>
+
+                        <p className="mobile-subtitle">
+                          {service.subtitle}
+                        </p>
+
+                        <p className="mobile-description">
+                          {service.description}
+                        </p>
+
+                
+
+                      </div>
                     </div>
 
                   </div>
+                );
+              })}
+            </div>
+
+            {/* DESKTOP PREVIEW */}
+            <div className="services-preview-panel">
+
+              {activeService ? (
+                <div className="preview-content">
+
+                  <div className="preview-top">
+
+                    <h3 className="preview-title">
+                      {activeService.title}
+                    </h3>
+
+                    <p className="preview-subtitle">
+                      {activeService.subtitle}
+                    </p>
+
+                  </div>
+
+                  <p className="preview-desc">
+                    {activeService.description}
+                  </p>
 
                 </div>
-              );
-            })}
+              ) : (
+                <div className="preview-empty">
+                  Select a service to view details.
+                </div>
+              )}
 
-          </div>
-
-
-          {/* ==========================================
-              BOTTOM NOTE
-          =========================================== */}
-          <div className="services-footer">
-
-            <div className="footer-line"></div>
-
-            <p>
-              Open to meaningful collaborations &amp; new opportunities.
-            </p>
-
-            <span className="footer-dot"></span>
+            </div>
 
           </div>
 
         </div>
-
-
-        {/* ==========================================
-            DECORATIVE ELEMENTS
-        =========================================== */}
-        <div className="decor-circle"></div>
-        <div className="decor-circle-small"></div>
-
       </section>
 
-
-      {/* ==========================================
-          STYLES
-      =========================================== */}
       <style>{`
 
-        /* =====================================================
-           MAIN SECTION
-        ====================================================== */
+        /* =====================================
+           BASE
+        ===================================== */
 
         .services-section {
-          position: relative;
-
           width: 100%;
-          min-height: 100vh;
-
-          background: #faf6f0;
-
-          display: flex;
-          justify-content: center;
-
-          padding: 130px 80px 100px;
-
+          background: #ffffff;
+          color: #1a1816;
+          padding: 100px 40px;
           box-sizing: border-box;
-
-          overflow: hidden;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
 
-
-        /* =====================================================
-           CONTAINER
-        ====================================================== */
-
         .services-container {
-          position: relative;
-          z-index: 2;
-
-          width: 100%;
-          max-width: 1152px;
-
+          max-width: 1200px;
           margin: 0 auto;
         }
 
-
-        /* =====================================================
+        /* =====================================
            HEADER
-        ====================================================== */
+        ===================================== */
 
         .services-header {
-          margin-bottom: 65px;
+          margin-bottom: 50px;
         }
 
-
-        .services-label {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-
-          margin-bottom: 20px;
-
-          color: #f29452;
-
-          font-size: 10px;
+        .section-eyebrow {
+          display: inline-block;
+          font-size: 11px;
           font-weight: 700;
-
-          letter-spacing: 3px;
+          letter-spacing: 2.5px;
+          color: #f29452;
+          margin-bottom: 12px;
         }
 
-
-        .label-line {
-          width: 35px;
-          height: 1px;
-
-          background: #f29452;
-        }
-
-
-        .header-content {
-          display: flex;
-          align-items: flex-end;
-          justify-content: space-between;
-
-          gap: 50px;
-        }
-
-
-        .services-title {
+        .section-heading {
           margin: 0;
-
-          color: #28221f;
-
-          font-size: 68px;
-          line-height: 0.95;
-
+          font-size: clamp(36px, 4vw, 46px);
+          line-height: 1.15;
           font-weight: 700;
-
-          letter-spacing: -3px;
-
-          white-space: nowrap;
+          letter-spacing: -1.5px;
+          color: #28221f;
         }
-
-
-        .services-title span {
-          color: #f29452;
-        }
-
 
         .services-intro {
-          max-width: 380px;
-
-          margin: 0 0 4px;
-
-          color: #756b65;
-
+          max-width: 620px;
+          margin: 18px 0 0;
+          color: #77706a;
           font-size: 15px;
           line-height: 1.7;
-
-          font-weight: 400;
         }
 
+        /* =====================================
+           DESKTOP SPLIT
+        ===================================== */
 
-        /* =====================================================
-           SERVICES LIST
-        ====================================================== */
+        .services-split {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 40px;
+          align-items: stretch;
+        }
 
-        .services-list {
+        /* =====================================
+           NAVIGATION
+        ===================================== */
+
+        .services-nav {
           display: flex;
           flex-direction: column;
-
           gap: 12px;
         }
 
-
-        /* =====================================================
-           SERVICE CARD
-        ====================================================== */
-
-        .service-card {
-          position: relative;
-
+        .service-item-wrapper {
           width: 100%;
-
-          background: rgba(255, 255, 255, 0.55);
-
-          border: 1px solid rgba(40, 34, 31, 0.12);
-
-          border-radius: 8px;
-
-          padding: 25px 28px;
-
-          box-sizing: border-box;
-
-          cursor: pointer;
-
-          transition:
-            background 0.35s ease,
-            border-color 0.35s ease,
-            transform 0.35s ease,
-            box-shadow 0.35s ease;
         }
 
+        .service-nav-item {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
 
-        .service-card:hover {
+          padding: 22px 26px;
+
           background: #ffffff;
 
-          border-color: rgba(242, 148, 82, 0.35);
-
-          transform: translateY(-2px);
-
-          box-shadow:
-            0 15px 35px rgba(40, 34, 31, 0.07);
-        }
-
-
-        /* =====================================================
-           ACTIVE CARD
-        ====================================================== */
-
-        .service-card-active {
-          background: #28221f;
-
-          border-color: #28221f;
-
-          box-shadow:
-            0 20px 45px rgba(40, 34, 31, 0.16);
-        }
-
-
-        .service-card-active:hover {
-          background: #28221f;
-
-          border-color: #28221f;
-
-          transform: none;
-        }
-
-
-        /* =====================================================
-           TOP ROW
-        ====================================================== */
-
-        .service-top {
-          display: flex;
-          align-items: center;
-
-          width: 100%;
-
-          gap: 25px;
-        }
-
-
-        /* =====================================================
-           NUMBER
-        ====================================================== */
-
-        .service-number {
-          width: 48px;
-          height: 48px;
-
-          flex-shrink: 0;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          border: 1px solid rgba(40, 34, 31, 0.18);
-
-          border-radius: 50%;
-
-          color: #f29452;
-
-          font-size: 13px;
-          font-weight: 700;
-
-          transition:
-            background 0.3s ease,
-            border-color 0.3s ease;
-        }
-
-
-        .service-card-active .service-number {
-          border-color: rgba(242, 148, 82, 0.5);
-
-          background: rgba(242, 148, 82, 0.08);
-
-          color: #f29452;
-        }
-
-
-        /* =====================================================
-           HEADING
-        ====================================================== */
-
-        .service-heading {
-          flex: 1;
-
-          min-width: 0;
-        }
-
-
-        .service-category {
-          display: block;
-
-          margin-bottom: 4px;
-
-          color: #a39a94;
-
-          font-size: 8px;
-
-          font-weight: 700;
-
-          letter-spacing: 2px;
-        }
-
-
-        .service-heading h2 {
-          margin: 0;
-
-          color: #28221f;
-
-          font-size: 25px;
-
-          line-height: 1.25;
-
-          font-weight: 700;
-
-          letter-spacing: -0.6px;
-
-          transition: color 0.3s ease;
-        }
-
-
-        .service-card-active .service-heading h2 {
-          color: #ffffff;
-        }
-
-
-        .service-card-active .service-category {
-          color: #f29452;
-        }
-
-
-        /* =====================================================
-           ICON BUTTON
-        ====================================================== */
-
-        .service-icon {
-          width: 46px;
-          height: 46px;
-
-          flex-shrink: 0;
-
-          border: none;
-
-          background: #f29452;
-
-          color: #ffffff;
-
-          border-radius: 5px;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          border: 1px solid #e6e2db;
+          border-radius: 14px;
 
           cursor: pointer;
+          overflow: hidden;
 
           transition:
             transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease,
             background 0.3s ease;
+
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0);
         }
 
+        .service-nav-item:hover {
+          border-color: #f29452;
+          background: #fffaf4;
 
-        .service-icon:hover {
-          transform: rotate(8deg) scale(1.05);
+          transform: translateY(-12px);
 
-          background: #e8833e;
+          box-shadow:
+            0 30px 50px rgba(0, 0, 0, 0.22);
         }
 
-
-        .service-icon-active {
+        .service-nav-item::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 4px;
+          left: 0;
+          bottom: 0;
           background: #f29452;
+          transition: width 0.45s ease;
         }
 
+        .service-nav-item:hover::after {
+          width: 100%;
+        }
 
-        /* =====================================================
-           EXPANDED CONTENT
-        ====================================================== */
+        .service-nav-item.active {
+          background: #4a5056;
+          border-color: #4a5056;
+          color: #ffffff;
 
-        .service-details {
-          display: grid;
+          box-shadow:
+            0 18px 30px rgba(45, 51, 57, 0.16);
 
-          grid-template-rows: 0fr;
+          transform: translateY(-1px);
+        }
 
-          opacity: 0;
+        .nav-item-left {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          min-width: 0;
+          flex: 1;
+        }
+
+        .nav-id {
+          font-size: 13px;
+          font-weight: 700;
+          color: #f29452;
+          flex-shrink: 0;
+        }
+
+        .service-nav-item.active .nav-id {
+          color: #f7b777;
+        }
+
+        .nav-title {
+          font-size: clamp(1rem, 1.9vw, 1.125rem);
+          font-weight: 600;
+          letter-spacing: -0.3px;
+          line-height: 1.4;
+          word-break: break-word;
+        }
+
+        .nav-arrow {
+          color: #8c857b;
 
           transition:
-            grid-template-rows 0.45s ease,
-            opacity 0.35s ease;
+            transform 0.35s ease,
+            color 0.35s ease;
+
+          flex-shrink: 0;
+
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
         }
 
-
-        .service-details-open {
-          grid-template-rows: 1fr;
-
-          opacity: 1;
+        .service-nav-item:hover .nav-arrow {
+          color: #b87333;
+          transform: translate(3px, -3px);
         }
 
+        .service-nav-item.active .nav-arrow {
+          color: #ffffff;
+          transform: rotate(45deg);
+        }
 
-        .service-details-inner {
+        /* =====================================
+           DESKTOP PREVIEW
+        ===================================== */
+
+        .services-preview-panel {
+          background: #4a5056;
+          color: #ffffff;
+
+          border-radius: 16px;
+
+          padding: 40px;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          min-height: 450px;
+
+          box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.08);
+
+          position: relative;
           overflow: hidden;
         }
 
-
-        .service-details-open .service-details-inner {
-          padding-top: 25px;
-        }
-
-
-        .details-line {
-          width: 100%;
-          height: 1px;
-
-          margin-bottom: 22px;
-
-          background: rgba(255, 255, 255, 0.12);
-        }
-
-
-        .details-content {
+        .preview-content {
+          flex: 1;
+          min-height: 100%;
+          position: relative;
+          z-index: 1;
           display: flex;
-
-          align-items: flex-start;
-          justify-content: space-between;
-
-          gap: 40px;
-
-          padding-left: 73px;
+          flex-direction: column;
+          justify-content: center;
         }
 
-
-        .details-content p {
-          max-width: 720px;
-
-          margin: 0;
-
-          color: #d8d0ca;
-
-          font-size: 15px;
-
-          line-height: 1.8;
-
-          font-weight: 400;
+        .preview-top {
+          padding-bottom: 38px;
         }
 
+        .preview-badge {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 2px;
 
-        .details-number {
-          flex-shrink: 0;
+          color: #f29452;
 
-          padding-top: 3px;
+          display: block;
 
-          color: rgba(242, 148, 82, 0.7);
+          margin-bottom: 16px;
+        }
 
-          font-size: 10px;
-
+        .preview-title {
+          font-size: 32px;
           font-weight: 700;
 
-          letter-spacing: 2px;
+          letter-spacing: -0.5px;
+
+          margin: 0 0 8px 0;
+
+          line-height: 1.2;
         }
 
-
-        /* =====================================================
-           FOOTER
-        ====================================================== */
-
-        .services-footer {
-          display: flex;
-          align-items: center;
-
-          gap: 15px;
-
-          margin-top: 38px;
-        }
-
-
-        .footer-line {
-          width: 35px;
-          height: 1px;
-
-          background: #f29452;
-        }
-
-
-        .services-footer p {
+        .preview-subtitle {
+          font-size: 15px;
+          color: #a39c93;
           margin: 0;
-
-          color: #817872;
-
-          font-size: 11px;
-
-          letter-spacing: 0.5px;
+          line-height: 1.6;
         }
 
+        .preview-desc {
+          font-size: 16px;
+          line-height: 1.8;
 
-        .footer-dot {
-          width: 5px;
-          height: 5px;
+          color: #d1cbc1;
 
-          border-radius: 50%;
-
-          background: #f29452;
+          margin: 0;
+          text-align: justify;
         }
 
-
-        /* =====================================================
-           DECORATION
-        ====================================================== */
-
-        .decor-circle {
-          position: absolute;
-
-          width: 420px;
-          height: 420px;
-
-          right: -220px;
-          top: 180px;
-
-          border: 1px solid rgba(242, 148, 82, 0.12);
-
-          border-radius: 50%;
+        .preview-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
         }
 
+        .preview-tag {
+          font-size: 12px;
+          font-weight: 500;
 
-        .decor-circle-small {
-          position: absolute;
+          background:
+            rgba(255, 255, 255, 0.07);
 
-          width: 200px;
-          height: 200px;
+          border:
+            1px solid rgba(255, 255, 255, 0.12);
 
-          left: -120px;
-          bottom: 80px;
+          color: #f0eae1;
 
-          border: 1px solid rgba(40, 34, 31, 0.06);
+          padding: 6px 14px;
 
-          border-radius: 50%;
+          border-radius: 20px;
         }
 
+        .preview-empty {
+          color: #aaa;
+          font-size: 15px;
+        }
 
-        /* =====================================================
+        /* =====================================
+           MOBILE DETAILS
+        ===================================== */
+
+        .mobile-service-details {
+          display: none;
+        }
+
+        /* =====================================
            TABLET
-        ====================================================== */
+        ===================================== */
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
 
           .services-section {
-            padding: 110px 50px 80px;
+            padding: 90px 28px;
           }
 
-
-          .services-title {
-            font-size: 56px;
+          .services-split {
+            grid-template-columns: 1fr;
           }
 
-
-          .services-intro {
-            max-width: 320px;
+          .services-preview-panel {
+            min-height: 400px;
           }
-
-
-          .service-heading h2 {
-            font-size: 22px;
-          }
-
         }
 
-
-        /* =====================================================
+        /* =====================================
            MOBILE
-        ====================================================== */
+        ===================================== */
 
         @media (max-width: 768px) {
 
           .services-section {
-            min-height: auto;
-
-            padding: 100px 22px 70px;
-
-            display: block;
+            padding: 72px 18px;
           }
-
-
-          .services-container {
-            max-width: 100%;
-          }
-
-
-          /* Header */
 
           .services-header {
-            margin-bottom: 40px;
+            margin-bottom: 34px;
           }
 
-
-          .services-label {
-            margin-bottom: 16px;
-
-            font-size: 9px;
-
-            letter-spacing: 2.5px;
+          .section-heading {
+            font-size: clamp(32px, 8vw, 40px);
+            letter-spacing: -1px;
           }
 
-
-          .label-line {
-            width: 25px;
+          .services-intro {
+            font-size: 14px;
           }
 
+          /*
+             Mobile becomes one column.
+          */
 
-          .header-content {
+          .services-split {
             display: block;
           }
 
-
-          .services-title {
-            font-size: 43px;
-
-            line-height: 1;
-
-            letter-spacing: -2px;
-
-            white-space: normal;
-
-            margin-bottom: 18px;
+          .services-nav {
+            gap: 12px;
           }
 
+          .service-nav-item {
+            padding: 19px 18px;
+            border-radius: 12px;
+          }
 
-          .services-intro {
-            max-width: 330px;
+          .nav-item-left {
+            gap: 14px;
+          }
+
+          .nav-title {
+            font-size: 15px;
+          }
+
+          .nav-id {
+            font-size: 12px;
+          }
+
+          /*
+             Hide desktop preview
+          */
+
+          .services-preview-panel {
+            display: none;
+          }
+
+          /*
+             Mobile accordion details
+          */
+
+          .mobile-service-details {
+            display: grid;
+
+            grid-template-rows: 0fr;
+
+            background: #4a5056;
+
+            color: #ffffff;
+
+            border-radius: 0 0 12px 12px;
+
+            margin-top: -4px;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            transition:
+              grid-template-rows 0.45s ease,
+              opacity 0.3s ease,
+              margin-top 0.3s ease;
+          }
+
+          .mobile-service-details.mobile-open {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            margin-top: -4px;
+          }
+
+          .mobile-details-inner {
+            min-height: 0;
+            overflow: hidden;
+
+            padding: 0 20px;
+
+            transition:
+              padding 0.4s ease;
+          }
+
+          .mobile-open .mobile-details-inner {
+            padding: 24px 20px 25px;
+          }
+
+          .mobile-preview-badge {
+            display: block;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 1.8px;
+
+            color: #f29452;
+
+            margin-bottom: 12px;
+          }
+
+          .mobile-details-inner h3 {
+            margin: 0 0 8px;
+
+            font-size: 23px;
+            line-height: 1.25;
+
+            letter-spacing: -0.5px;
+          }
+
+          .mobile-subtitle {
+            margin: 0 0 28px;
+
+            font-size: 13px;
+            line-height: 1.6;
+
+            color: #aaa49d;
+          }
+
+          .mobile-description {
+            margin: 0 0 22px;
 
             font-size: 14px;
+            line-height: 1.75;
 
-            line-height: 1.65;
-
-            margin: 0;
+            color: #d1cbc1;
+            text-align: justify;
           }
 
-
-          /* Service cards */
-
-          .services-list {
-            gap: 10px;
+          .mobile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
           }
 
+          .mobile-tags span {
+            padding: 6px 11px;
 
-          .service-card {
-            padding: 18px 16px;
+            border-radius: 20px;
 
-            border-radius: 7px;
-          }
+            background:
+              rgba(255, 255, 255, 0.07);
 
+            border:
+              1px solid rgba(255, 255, 255, 0.12);
 
-          .service-top {
-            gap: 13px;
-
-            align-items: center;
-          }
-
-
-          /* Number */
-
-          .service-number {
-            width: 38px;
-            height: 38px;
+            color: #f0eae1;
 
             font-size: 11px;
           }
 
+          /*
+             When open, make button connect
+             naturally to its content.
+          */
 
-          /* Heading */
+          .service-item-wrapper:has(.mobile-open)
+            .service-nav-item {
+              border-radius: 12px 12px 4px 4px;
+              border-color: #4a5056;
+            }
 
-          .service-category {
-            font-size: 7px;
+        }
 
-            letter-spacing: 1.5px;
+        /* =====================================
+           SMALL MOBILE
+        ===================================== */
 
-            margin-bottom: 3px;
+        @media (max-width: 480px) {
+
+          .services-section {
+            padding: 62px 14px;
           }
 
-
-          .service-heading h2 {
-            font-size: 16px;
-
-            line-height: 1.3;
-
-            letter-spacing: -0.2px;
+          .section-eyebrow {
+            letter-spacing: 1.8px;
+            font-size: 10px;
           }
 
-
-          /* Icon */
-
-          .service-icon {
-            width: 38px;
-            height: 38px;
-
-            border-radius: 4px;
-
-            flex-shrink: 0;
+          .section-heading {
+            font-size: 32px;
           }
 
-
-          /* Details */
-
-          .service-details-open .service-details-inner {
-            padding-top: 20px;
-          }
-
-
-          .details-line {
-            margin-bottom: 17px;
-          }
-
-
-          .details-content {
-            display: block;
-
-            padding-left: 0;
-
-            padding-right: 3px;
-          }
-
-
-          .details-content p {
-            max-width: none;
-
+          .services-intro {
             font-size: 13px;
-
-            line-height: 1.75;
+            line-height: 1.65;
           }
 
-
-          .details-number {
-            display: block;
-
-            margin-top: 15px;
-
-            font-size: 8px;
+          .service-nav-item {
+            padding: 16px 14px;
           }
 
-
-          /* Footer */
-
-          .services-footer {
-            margin-top: 30px;
-
-            gap: 10px;
+          .nav-item-left {
+            gap: 11px;
           }
 
-
-          .services-footer p {
-            font-size: 9px;
-
-            line-height: 1.4;
+          .nav-id {
+            font-size: 11px;
           }
 
-
-          .footer-line {
-            width: 22px;
+          .nav-title {
+            font-size: 14px;
           }
 
-
-          .decor-circle {
-            width: 250px;
-            height: 250px;
-
-            right: -180px;
-            top: 120px;
+          .nav-arrow {
+            width: 28px;
+            height: 28px;
           }
 
+          .mobile-open .mobile-details-inner {
+            padding: 22px 16px 22px;
+          }
 
-          .decor-circle-small {
-            display: none;
+          .mobile-details-inner h3 {
+            font-size: 21px;
+          }
+
+          .mobile-description {
+            font-size: 13.5px;
+            line-height: 1.7;
           }
 
         }
 
+        /* =====================================
+           VERY SMALL SCREENS
+        ===================================== */
 
-        /* =====================================================
-           VERY SMALL PHONES
-        ====================================================== */
-
-        @media (max-width: 400px) {
+        @media (max-width: 360px) {
 
           .services-section {
-            padding-left: 18px;
-            padding-right: 18px;
+            padding-left: 11px;
+            padding-right: 11px;
           }
 
-
-          .services-title {
-            font-size: 38px;
+          .section-heading {
+            font-size: 29px;
           }
 
+          .service-nav-item {
+            padding: 14px 12px;
+          }
 
-          .services-intro {
+          .nav-item-left {
+            gap: 9px;
+          }
+
+          .nav-title {
             font-size: 13px;
           }
 
+        }
 
-          .service-card {
-            padding: 16px 13px;
-          }
+        /* =====================================
+           REDUCED MOTION
+        ===================================== */
 
+        @media (prefers-reduced-motion: reduce) {
 
-          .service-top {
-            gap: 10px;
-          }
-
-
-          .service-number {
-            width: 35px;
-            height: 35px;
-
-            font-size: 10px;
-          }
-
-
-          .service-heading h2 {
-            font-size: 14px;
-          }
-
-
-          .service-icon {
-            width: 35px;
-            height: 35px;
-          }
-
-
-          .service-details-open .service-details-inner {
-            padding-top: 17px;
-          }
-
-
-          .details-content p {
-            font-size: 12.5px;
+          .service-nav-item,
+          .nav-arrow,
+          .mobile-service-details,
+          .mobile-details-inner {
+            transition: none !important;
           }
 
         }
