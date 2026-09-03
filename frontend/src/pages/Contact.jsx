@@ -34,15 +34,9 @@ export default function Contact() {
         <div className="contact-wrapper">
 
           <div className="contact-header">
-            <div className="gallery-eyebrow">
-              <span className="eyebrow-line"></span>
-              <span>Contact Me</span>
-              <span className="eyebrow-line"></span>
-            </div>
+            <span className="gallery-eyebrow">CONTACT ME</span>
 
-            <h1>
-              Let's <span>Connect</span>
-            </h1>
+            <h1>Let&apos;s Connect</h1>
 
             <p>
               Whether you have a project, collaboration opportunity,
@@ -356,7 +350,7 @@ export default function Contact() {
         .contact-page {
           width: 100%;
           min-height: 100vh;
-          background: #faf6f0;
+          background: #ffffff;
           padding: 150px 40px 100px;
           overflow-x: hidden;
           color: #28221f;
@@ -371,47 +365,34 @@ export default function Contact() {
         .contact-header {
           width: 100%;
           max-width: 850px;
-          margin: 0 auto 75px;
+          margin: 0 auto 55px;
           text-align: center;
         }
 
         .gallery-eyebrow {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          margin-bottom: 20px;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 2px;
+          display: inline-block;
+          margin-bottom: 14px;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 2.5px;
           text-transform: uppercase;
-          color: #5c534e;
-        }
-
-        .eyebrow-line {
-          width: 35px;
-          height: 1px;
-          background: #f29452;
+          color: #f29452;
         }
 
         .contact-header h1 {
           margin: 0;
-          font-size: clamp(44px, 6vw, 72px);
-          line-height: 1;
+          font-size: clamp(36px, 4vw, 50px);
+          line-height: 1.1;
           font-weight: 700;
-          letter-spacing: -3px;
+          letter-spacing: -2px;
           color: #28221f;
-        }
-
-        .contact-header h1 span {
-          color: #f29452;
         }
 
         .contact-header > p {
           max-width: 680px;
-          margin: 30px auto 0;
-          font-size: 18px;
-          line-height: 1.7;
+          margin: 20px auto 0;
+          font-size: 16px;
+          line-height: 1.75;
           color: #5c534e;
         }
 
@@ -423,7 +404,7 @@ export default function Contact() {
         }
 
         .form-card {
-          background: #ffffff;
+          background: #faf6f0;
           padding: 50px;
           border: 1px solid rgba(40, 34, 31, 0.08);
           box-shadow: 0 25px 70px rgba(40, 34, 31, 0.07);
@@ -848,21 +829,6 @@ export default function Contact() {
 
           .contact-header {
             margin-bottom: 50px;
-          }
-
-          .gallery-eyebrow {
-            font-size: 10px;
-            letter-spacing: 1.4px;
-          }
-
-          .eyebrow-line {
-            width: 25px;
-          }
-
-          .contact-header h1 {
-            font-size: clamp(48px, 15vw, 68px);
-            letter-spacing: -3px;
-            line-height: 0.95;
           }
 
           .contact-header > p {

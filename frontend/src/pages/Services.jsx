@@ -7,8 +7,7 @@ const servicesData = [
     title: 'Healthcare Consulting',
     subtitle: 'Strategic health programs & medical advisory',
     description:
-      'Misker is a medical doctor (general practitioner) and an MPH holder from at Johns Hopkins University. She is skilled in healthcare leadership, health policy, health communication, running nonprofit organizations, advocacy work, and project management.',
-    tags: ['Clinical Strategy', 'Public Health', 'Program Design'],
+      'Misker is a medical doctor (general practitioner) and an MPH holder from Johns Hopkins University. She is skilled in healthcare leadership, health policy, health communication, running nonprofit organizations, advocacy work, and project management.',
   },
   {
     id: 'II',
@@ -16,7 +15,6 @@ const servicesData = [
     subtitle: 'Brand representation & 7+ years modeling',
     description:
       'Professional modeling and promotional services with over 7 years of experience. Represented organizations such as HabariDoc Digital Health Services, Abyssinia Bank, and Miss Africa Beauty Queen.',
-    tags: ['Brand Visibility', 'Campaigns', 'Media'],
   },
   {
     id: 'III',
@@ -24,7 +22,6 @@ const servicesData = [
     subtitle: 'Keynotes on leadership & youth advocacy',
     description:
       'Misker has been a panelist and trainer at multiple international and national conferences, events, and webinars. She is especially skilled in delivering sessions on professional development, volunteerism, community service, and mental health. Here are some of her notable speaking engagements.',
-    tags: ['Leadership', 'Youth Advocacy', 'Keynotes'],
   },
   {
     id: 'IV',
@@ -32,7 +29,6 @@ const servicesData = [
     subtitle: 'Conferences, campaigns & community events',
     description:
       'Misker is skilled in planning diverse events such as professional development events, conferences, webinars, pageants/beauty contests, curated entertainment events, and medical campaigns.',
-    tags: ['Planning', 'Coordination', 'Execution'],
   },
   {
     id: 'V',
@@ -40,15 +36,14 @@ const servicesData = [
     subtitle: 'Multidisciplinary ventures & partnerships',
     description:
       'Misker is open to collaboration with organizations, businesses, networks, professional associations, social media platforms and many more especially those focused on healthcare, community engagement, mental health and professional development.',
-    tags: ['Partnerships', 'Innovation', 'Impact'],
   },
 ];
 
 export default function Services() {
-  const [activeId, setActiveId] = useState('01');
+  const [activeId, setActiveId] = useState('I');
 
   const activeService =
-    servicesData.find((s) => s.id === activeId) || servicesData[0];
+    servicesData.find((service) => service.id === activeId) || null;
 
   const handleServiceClick = (id) => {
     setActiveId((current) => (current === id ? null : id));
@@ -59,9 +54,10 @@ export default function Services() {
       <section className="services-section">
         <div className="services-container">
 
-          {/* HEADER */}
           <div className="services-header">
-            <span className="section-eyebrow">WHAT I DO</span>
+            <span className="section-eyebrow">
+              WHAT I DO
+            </span>
 
             <h2 className="section-heading">
               Featured Expertise &amp; Services
@@ -73,18 +69,17 @@ export default function Services() {
             </p>
           </div>
 
-          {/* DESKTOP / TABLET */}
           <div className="services-split">
 
-            {/* LEFT NAVIGATION */}
             <div className="services-nav">
               {servicesData.map((service) => {
                 const isActive = activeId === service.id;
 
                 return (
-                  <div key={service.id} className="service-item-wrapper">
-
-                    {/* SERVICE BUTTON */}
+                  <div
+                    key={service.id}
+                    className="service-item-wrapper"
+                  >
                     <div
                       className={`service-nav-item ${
                         isActive ? 'active' : ''
@@ -116,19 +111,19 @@ export default function Services() {
                       </div>
 
                       <div className="nav-arrow">
-                        <ArrowUpRight size={18} />
+                        <ArrowUpRight
+                          size={19}
+                          strokeWidth={1.8}
+                        />
                       </div>
                     </div>
 
-                    {/* MOBILE DETAILS */}
                     <div
                       className={`mobile-service-details ${
                         isActive ? 'mobile-open' : ''
                       }`}
                     >
                       <div className="mobile-details-inner">
-
-                        
 
                         <h3>
                           {service.title}
@@ -142,8 +137,6 @@ export default function Services() {
                           {service.description}
                         </p>
 
-                
-
                       </div>
                     </div>
 
@@ -152,7 +145,6 @@ export default function Services() {
               })}
             </div>
 
-            {/* DESKTOP PREVIEW */}
             <div className="services-preview-panel">
 
               {activeService ? (
@@ -190,77 +182,67 @@ export default function Services() {
 
       <style>{`
 
-        /* =====================================
-           BASE
-        ===================================== */
-
         .services-section {
           width: 100%;
-          background: #ffffff;
-          color: #1a1816;
-          padding: 100px 40px;
+          background: #faf6f0;
+          color: #28221f;
+          padding: 110px 40px;
           box-sizing: border-box;
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
         }
 
         .services-container {
+          width: 100%;
           max-width: 1200px;
           margin: 0 auto;
         }
 
-        /* =====================================
-           HEADER
-        ===================================== */
-
         .services-header {
-          margin-bottom: 50px;
+          margin-bottom: 55px;
         }
 
         .section-eyebrow {
           display: inline-block;
           font-size: 11px;
-          font-weight: 700;
+          font-weight: 800;
           letter-spacing: 2.5px;
           color: #f29452;
-          margin-bottom: 12px;
+          margin-bottom: 14px;
         }
 
         .section-heading {
           margin: 0;
-          font-size: clamp(36px, 4vw, 46px);
-          line-height: 1.15;
+          font-size: clamp(36px, 4vw, 50px);
+          line-height: 1.1;
           font-weight: 700;
-          letter-spacing: -1.5px;
+          letter-spacing: -2px;
           color: #28221f;
         }
 
         .services-intro {
-          max-width: 620px;
-          margin: 18px 0 0;
-          color: #77706a;
-          font-size: 15px;
-          line-height: 1.7;
+          max-width: 650px;
+          margin: 20px 0 0;
+          color: #5c534e;
+          font-size: 16px;
+          line-height: 1.75;
         }
-
-        /* =====================================
-           DESKTOP SPLIT
-        ===================================== */
 
         .services-split {
           display: grid;
           grid-template-columns: 1.1fr 0.9fr;
-          gap: 40px;
+          gap: 38px;
           align-items: stretch;
         }
-
-        /* =====================================
-           NAVIGATION
-        ===================================== */
 
         .services-nav {
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 14px;
         }
 
         .service-item-wrapper {
@@ -269,234 +251,282 @@ export default function Services() {
 
         .service-nav-item {
           position: relative;
+          min-height: 88px;
+
           display: flex;
           align-items: center;
           justify-content: space-between;
 
-          padding: 22px 26px;
+          padding: 18px 20px 18px 26px;
 
           background: #ffffff;
 
-          border: 1px solid #e6e2db;
-          border-radius: 14px;
+          border: 1px solid rgba(40, 34, 31, 0.09);
+
+          border-radius: 0;
 
           cursor: pointer;
-          overflow: hidden;
+
+          overflow: visible;
 
           transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease,
-            border-color 0.3s ease,
-            background 0.3s ease;
-
-          box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            transform 0.35s ease,
+            box-shadow 0.35s ease,
+            border-color 0.35s ease,
+            background 0.35s ease;
         }
 
         .service-nav-item:hover {
-          border-color: #f29452;
-          background: #fffaf4;
+          transform: translateY(-7px);
 
-          transform: translateY(-12px);
+          border-color:
+            rgba(242, 148, 82, 0.35);
+
+          background: #ffffff;
 
           box-shadow:
-            0 30px 50px rgba(0, 0, 0, 0.22);
-        }
-
-        .service-nav-item::after {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 4px;
-          left: 0;
-          bottom: 0;
-          background: #f29452;
-          transition: width 0.45s ease;
-        }
-
-        .service-nav-item:hover::after {
-          width: 100%;
+            0 20px 45px
+            rgba(40, 34, 31, 0.14);
         }
 
         .service-nav-item.active {
-          background: #4a5056;
-          border-color: #4a5056;
+          background: #464b50;
+
+          border-color: #464b50;
+
           color: #ffffff;
 
-          box-shadow:
-            0 18px 30px rgba(45, 51, 57, 0.16);
+          transform: translateY(0);
 
-          transform: translateY(-1px);
+          box-shadow:
+            0 15px 35px
+            rgba(70, 75, 80, 0.18);
+        }
+
+        .service-nav-item.active:hover {
+          transform: translateY(-5px);
+
+          box-shadow:
+            0 22px 45px
+            rgba(70, 75, 80, 0.25);
         }
 
         .nav-item-left {
           display: flex;
           align-items: center;
+
           gap: 20px;
+
           min-width: 0;
+
           flex: 1;
         }
 
         .nav-id {
-          font-size: 13px;
-          font-weight: 700;
-          color: #f29452;
+          width: 25px;
+
           flex-shrink: 0;
+
+          font-size: 12px;
+
+          font-weight: 800;
+
+          color: #f29452;
         }
 
         .service-nav-item.active .nav-id {
-          color: #f7b777;
+          color: #f29452;
         }
 
         .nav-title {
-          font-size: clamp(1rem, 1.9vw, 1.125rem);
-          font-weight: 600;
+          font-size:
+            clamp(
+              16px,
+              1.8vw,
+              19px
+            );
+
+          font-weight: 650;
+
           letter-spacing: -0.3px;
-          line-height: 1.4;
-          word-break: break-word;
+
+          line-height: 1.35;
         }
 
         .nav-arrow {
-          color: #8c857b;
+          width: 46px;
+          height: 46px;
 
-          transition:
-            transform 0.35s ease,
-            color 0.35s ease;
+          flex: 0 0 46px;
 
-          flex-shrink: 0;
-
-          display: inline-flex;
+          display: flex;
           align-items: center;
           justify-content: center;
+
+          background: transparent;
+
+          color: #5c534e;
+
+          position: relative;
+
+          transition:
+            transform 0.4s ease,
+            background 0.4s ease,
+            color 0.4s ease;
+        }
+
+        .nav-arrow svg {
+          transition:
+            transform 0.4s ease;
         }
 
         .service-nav-item:hover .nav-arrow {
-          color: #b87333;
-          transform: translate(3px, -3px);
-        }
+          background: #f29452;
 
-        .service-nav-item.active .nav-arrow {
-          color: #ffffff;
+          color: #28221f;
+
           transform: rotate(45deg);
         }
 
-        /* =====================================
-           DESKTOP PREVIEW
-        ===================================== */
+        .service-nav-item:hover .nav-arrow svg {
+          transform: rotate(-45deg);
+        }
 
-        .services-preview-panel {
-          background: #4a5056;
+        .service-nav-item.active .nav-arrow {
+          background: transparent;
+
           color: #ffffff;
 
-          border-radius: 16px;
+          transform: none;
+        }
 
-          padding: 40px;
+        .service-nav-item.active .nav-arrow svg {
+          transform: none;
+        }
+
+        .services-preview-panel {
+          position: relative;
+
+          background: #464b50;
+
+          color: #ffffff;
+
+          padding: 50px;
 
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
+          justify-content: center;
 
-          min-height: 450px;
+          min-height: 490px;
+
+          overflow: hidden;
 
           box-shadow:
-            0 20px 40px rgba(0, 0, 0, 0.08);
+            0 20px 45px
+            rgba(40, 34, 31, 0.1);
+        }
 
-          position: relative;
-          overflow: hidden;
+        .services-preview-panel::before {
+          content: "";
+
+          position: absolute;
+
+          width: 300px;
+          height: 300px;
+
+          border:
+            1px solid
+            rgba(242, 148, 82, 0.16);
+
+          border-radius: 50%;
+
+          right: -130px;
+          top: -130px;
+        }
+
+        .services-preview-panel::after {
+          content: "";
+
+          position: absolute;
+
+          width: 120px;
+          height: 120px;
+
+          background:
+            rgba(242, 148, 82, 0.08);
+
+          border-radius: 50%;
+
+          left: -60px;
+          bottom: -60px;
         }
 
         .preview-content {
-          flex: 1;
-          min-height: 100%;
           position: relative;
-          z-index: 1;
+
+          z-index: 2;
+
           display: flex;
+
           flex-direction: column;
+
           justify-content: center;
         }
 
         .preview-top {
-          padding-bottom: 38px;
-        }
-
-        .preview-badge {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 2px;
-
-          color: #f29452;
-
-          display: block;
-
-          margin-bottom: 16px;
+          padding-bottom: 34px;
         }
 
         .preview-title {
-          font-size: 32px;
+          font-size:
+            clamp(
+              30px,
+              3vw,
+              42px
+            );
+
           font-weight: 700;
 
-          letter-spacing: -0.5px;
+          letter-spacing: -1.2px;
 
-          margin: 0 0 8px 0;
+          margin: 0 0 10px;
 
-          line-height: 1.2;
+          line-height: 1.12;
         }
 
         .preview-subtitle {
           font-size: 15px;
-          color: #a39c93;
+
+          color: #bdb8b3;
+
           margin: 0;
+
           line-height: 1.6;
         }
 
         .preview-desc {
           font-size: 16px;
-          line-height: 1.8;
 
-          color: #d1cbc1;
+          line-height: 1.85;
+
+          color: #e1ddd8;
 
           margin: 0;
-          text-align: justify;
-        }
-
-        .preview-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-        }
-
-        .preview-tag {
-          font-size: 12px;
-          font-weight: 500;
-
-          background:
-            rgba(255, 255, 255, 0.07);
-
-          border:
-            1px solid rgba(255, 255, 255, 0.12);
-
-          color: #f0eae1;
-
-          padding: 6px 14px;
-
-          border-radius: 20px;
         }
 
         .preview-empty {
-          color: #aaa;
+          position: relative;
+
+          z-index: 2;
+
+          color: #aaa49e;
+
           font-size: 15px;
         }
-
-        /* =====================================
-           MOBILE DETAILS
-        ===================================== */
 
         .mobile-service-details {
           display: none;
         }
-
-        /* =====================================
-           TABLET
-        ===================================== */
 
         @media (max-width: 1100px) {
 
@@ -511,34 +541,35 @@ export default function Services() {
           .services-preview-panel {
             min-height: 400px;
           }
-        }
 
-        /* =====================================
-           MOBILE
-        ===================================== */
+        }
 
         @media (max-width: 768px) {
 
           .services-section {
-            padding: 72px 18px;
+            padding: 75px 18px;
           }
 
           .services-header {
-            margin-bottom: 34px;
+            margin-bottom: 35px;
           }
 
           .section-heading {
-            font-size: clamp(32px, 8vw, 40px);
-            letter-spacing: -1px;
+            font-size:
+              clamp(
+                32px,
+                8vw,
+                42px
+              );
+
+            letter-spacing: -1.5px;
           }
 
           .services-intro {
             font-size: 14px;
-          }
 
-          /*
-             Mobile becomes one column.
-          */
+            line-height: 1.7;
+          }
 
           .services-split {
             display: block;
@@ -549,166 +580,149 @@ export default function Services() {
           }
 
           .service-nav-item {
-            padding: 19px 18px;
-            border-radius: 12px;
+            min-height: 76px;
+
+            padding:
+              15px
+              16px
+              15px
+              18px;
+          }
+
+          .service-nav-item:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+              0 16px 30px
+              rgba(40, 34, 31, 0.13);
           }
 
           .nav-item-left {
-            gap: 14px;
+            gap: 13px;
+          }
+
+          .nav-id {
+            width: 20px;
+
+            font-size: 11px;
           }
 
           .nav-title {
             font-size: 15px;
           }
 
-          .nav-id {
-            font-size: 12px;
-          }
+          .nav-arrow {
+            width: 42px;
+            height: 42px;
 
-          /*
-             Hide desktop preview
-          */
+            flex-basis: 42px;
+          }
 
           .services-preview-panel {
             display: none;
           }
-
-          /*
-             Mobile accordion details
-          */
 
           .mobile-service-details {
             display: grid;
 
             grid-template-rows: 0fr;
 
-            background: #4a5056;
+            background: #464b50;
 
             color: #ffffff;
 
-            border-radius: 0 0 12px 12px;
+            border-radius: 0;
 
-            margin-top: -4px;
+            margin-top: -3px;
 
             overflow: hidden;
 
             opacity: 0;
 
             transition:
-              grid-template-rows 0.45s ease,
-              opacity 0.3s ease,
-              margin-top 0.3s ease;
+              grid-template-rows 0.4s ease,
+              opacity 0.3s ease;
           }
 
           .mobile-service-details.mobile-open {
             grid-template-rows: 1fr;
+
             opacity: 1;
-            margin-top: -4px;
           }
 
           .mobile-details-inner {
             min-height: 0;
+
             overflow: hidden;
 
             padding: 0 20px;
-
-            transition:
-              padding 0.4s ease;
           }
 
           .mobile-open .mobile-details-inner {
-            padding: 24px 20px 25px;
-          }
-
-          .mobile-preview-badge {
-            display: block;
-
-            font-size: 10px;
-            font-weight: 700;
-
-            letter-spacing: 1.8px;
-
-            color: #f29452;
-
-            margin-bottom: 12px;
+            padding:
+              25px
+              20px
+              27px;
           }
 
           .mobile-details-inner h3 {
-            margin: 0 0 8px;
+            margin:
+              0 0 8px;
 
             font-size: 23px;
+
             line-height: 1.25;
 
             letter-spacing: -0.5px;
           }
 
           .mobile-subtitle {
-            margin: 0 0 28px;
+            margin:
+              0 0 22px;
 
             font-size: 13px;
+
             line-height: 1.6;
 
-            color: #aaa49d;
+            color: #bdb8b3;
           }
 
           .mobile-description {
-            margin: 0 0 22px;
+            margin: 0;
 
             font-size: 14px;
+
             line-height: 1.75;
 
-            color: #d1cbc1;
-            text-align: justify;
+            color: #e1ddd8;
           }
-
-          .mobile-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-          }
-
-          .mobile-tags span {
-            padding: 6px 11px;
-
-            border-radius: 20px;
-
-            background:
-              rgba(255, 255, 255, 0.07);
-
-            border:
-              1px solid rgba(255, 255, 255, 0.12);
-
-            color: #f0eae1;
-
-            font-size: 11px;
-          }
-
-          /*
-             When open, make button connect
-             naturally to its content.
-          */
 
           .service-item-wrapper:has(.mobile-open)
             .service-nav-item {
-              border-radius: 12px 12px 4px 4px;
-              border-color: #4a5056;
-            }
+            border-radius: 0;
+
+            border-color: #464b50;
+          }
+
+          .service-item-wrapper:has(.mobile-open)
+            .service-nav-item:hover {
+            transform: translateY(-2px);
+          }
 
         }
-
-        /* =====================================
-           SMALL MOBILE
-        ===================================== */
 
         @media (max-width: 480px) {
 
           .services-section {
-            padding: 62px 14px;
+            padding:
+              62px
+              14px;
           }
 
           .section-eyebrow {
-            letter-spacing: 1.8px;
             font-size: 10px;
+
+            letter-spacing: 1.8px;
           }
 
           .section-heading {
@@ -717,19 +731,26 @@ export default function Services() {
 
           .services-intro {
             font-size: 13px;
-            line-height: 1.65;
           }
 
           .service-nav-item {
-            padding: 16px 14px;
+            min-height: 70px;
+
+            padding:
+              13px
+              12px
+              13px
+              14px;
           }
 
           .nav-item-left {
-            gap: 11px;
+            gap: 9px;
           }
 
           .nav-id {
-            font-size: 11px;
+            width: 18px;
+
+            font-size: 10px;
           }
 
           .nav-title {
@@ -737,12 +758,21 @@ export default function Services() {
           }
 
           .nav-arrow {
-            width: 28px;
-            height: 28px;
+            width: 38px;
+            height: 38px;
+
+            flex-basis: 38px;
+          }
+
+          .nav-arrow svg {
+            width: 17px;
+            height: 17px;
           }
 
           .mobile-open .mobile-details-inner {
-            padding: 22px 16px 22px;
+            padding:
+              22px
+              16px;
           }
 
           .mobile-details-inner h3 {
@@ -751,19 +781,17 @@ export default function Services() {
 
           .mobile-description {
             font-size: 13.5px;
+
             line-height: 1.7;
           }
 
         }
 
-        /* =====================================
-           VERY SMALL SCREENS
-        ===================================== */
-
         @media (max-width: 360px) {
 
           .services-section {
             padding-left: 11px;
+
             padding-right: 11px;
           }
 
@@ -772,27 +800,29 @@ export default function Services() {
           }
 
           .service-nav-item {
-            padding: 14px 12px;
-          }
-
-          .nav-item-left {
-            gap: 9px;
+            padding:
+              12px
+              10px;
           }
 
           .nav-title {
             font-size: 13px;
           }
 
-        }
+          .nav-arrow {
+            width: 35px;
+            height: 35px;
 
-        /* =====================================
-           REDUCED MOTION
-        ===================================== */
+            flex-basis: 35px;
+          }
+
+        }
 
         @media (prefers-reduced-motion: reduce) {
 
           .service-nav-item,
           .nav-arrow,
+          .nav-arrow svg,
           .mobile-service-details,
           .mobile-details-inner {
             transition: none !important;

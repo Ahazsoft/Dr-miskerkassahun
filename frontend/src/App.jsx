@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import About from './pages/About';
+import AboutDetail from './pages/About_detail';
+import PrincipleDetail from './pages/PrincipleDetail';
 import Gallery from './pages/Gallery';
 
 import Services from './pages/Services';
@@ -18,6 +20,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about-detail" element={<AboutDetail />} />
+        <Route path="/principle-detail/:slug" element={<PrincipleDetail />} />
         <Route path="/gallery" element={<Gallery />} />
 
         <Route path="/services" element={<Services />} />

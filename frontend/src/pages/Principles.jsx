@@ -6,24 +6,28 @@ export default function Principles() {
     {
       title: "Professional\nBackground",
       desc: "A medical doctor and public health expert with an MD from St. Paul's Hospital Millennium Medical College and an MPH from the Johns Hopkins Bloomberg School of Public Health.",
+      target: '/principle-detail/professional-background',
       dark: false,
       icon: Stethoscope,
     },
     {
       title: "Leadership &\nCommunity\nImpact",
       desc: "Co-founded GIV Society Ethiopia and launched projects through Ensight Global Consultancy to build trusting relationships, organize health fairs, and create opportunities for others.",
+      target: '/principle-detail/leadership-community-impact',
       dark: true,
       icon: Users,
     },
     {
       title: "Global\nAdvocacy &\nRepresentation",
       desc: "Represented Ethiopia on international pageant stages to advocate for mental health, health equity, and vibrant African stories.",
+      target: '/principle-detail/global-advocacy-representation',
       dark: false,
       icon: Globe,
     },
     {
       title: "Personal\nPassions &\nCulture",
       desc: "A bookworm who loves psychological thrillers, coffee-fueled conversations, event curation, traditional Ethiopian feasts, and serving as a proud ambassador of Ethiopian culture.",
+      target: '/principle-detail/personal-passions-culture',
       dark: true,
       icon: BookOpen,
     }
@@ -36,11 +40,9 @@ export default function Principles() {
 
           {/* Heading */}
           <div className="principles-heading">
-            <div className="heading-line"></div>
+            <span className="section-eyebrow">CORE PRINCIPLES</span>
 
-            <h3>
-              Core <span>Principles</span>
-            </h3>
+            <h3>Core Principles</h3>
 
             <p>
               The values, experiences, and passions that shape my work
@@ -77,13 +79,13 @@ export default function Principles() {
                   </div>
 
                   {/* Bottom arrow */}
-                  <div className="card-bottom">
+                  <a href={item.target} className="card-bottom">
                     <span>Learn more</span>
 
                     <div className="arrow-wrapper">
                       <ArrowUpRight size={19} strokeWidth={2} />
                     </div>
-                  </div>
+                  </a>
 
                 </article>
               );
@@ -115,36 +117,34 @@ export default function Principles() {
 
         .principles-heading {
           width: 100%;
-          margin-bottom: 65px;
+          margin-bottom: 55px;
           position: relative;
         }
 
-        .heading-line {
-          width: 65px;
-          height: 4px;
-          background: #f29452;
-          margin-bottom: 22px;
+        .section-eyebrow {
+          display: inline-block;
+          color: #f29452;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 2.5px;
+          margin-bottom: 14px;
         }
 
         .principles-heading h3 {
           margin: 0;
           color: #28221f;
-          font-size: clamp(38px, 5vw, 58px);
-          line-height: 1.05;
+          font-size: clamp(36px, 4vw, 50px);
+          line-height: 1.1;
           font-weight: 700;
-          letter-spacing: -0.045em;
-        }
-
-        .principles-heading h3 span {
-          color: #f29452;
+          letter-spacing: -2px;
         }
 
         .principles-heading p {
-          max-width: 620px;
+          max-width: 650px;
           margin: 20px 0 0;
-          color: #3f3b38;
+          color: #5c534e;
           font-size: 15px;
-          line-height: 1.7;
+          line-height: 1.75;
         }
 
         .principles-grid {
@@ -309,6 +309,7 @@ export default function Principles() {
           font-weight: 700;
           letter-spacing: 0.13em;
           text-transform: uppercase;
+          text-decoration: none;
         }
 
         .light-card .card-bottom {
@@ -382,16 +383,6 @@ export default function Principles() {
             margin-bottom: 45px;
           }
 
-          .heading-line {
-            width: 50px;
-            height: 3px;
-            margin-bottom: 18px;
-          }
-
-          .principles-heading h3 {
-            font-size: 40px;
-          }
-
           .principles-heading p {
             font-size: 14px;
             margin-top: 16px;
@@ -444,10 +435,6 @@ export default function Principles() {
 
           .principles-heading {
             margin-bottom: 35px;
-          }
-
-          .principles-heading h3 {
-            font-size: 34px;
           }
 
           .principles-heading p {

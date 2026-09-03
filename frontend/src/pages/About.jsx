@@ -2,16 +2,17 @@ import React from 'react';
 import img1 from '../assets/images/img2.jpg';
 import Principles from './Principles';
 
-export default function About() {
+export default function AboutDetail() {
   return (
     <>
       <section className="about-section">
         <div className="about-container">
-          
+
           <div className="about-content">
             <h2 className="about-title">
               Hello!
             </h2>
+
             <p className="about-text">
               I'm Dr. Misker Kassahun — but feel free to call me Mika.
               I'm a medical doctor, public health professional, and
@@ -26,7 +27,9 @@ export default function About() {
 
           <div className="about-image-section">
             <div className="about-image-frame">
+
               <div className="about-grey-box"></div>
+
               <div className="about-image-wrapper">
                 <img
                   src={img1}
@@ -34,9 +37,17 @@ export default function About() {
                   className="about-image"
                 />
               </div>
+
               <div className="about-orange-box">
-                <span>Dr. Misker<br />Kassahun</span>
+                <span>
+                  Medical Doctor
+                  <br />
+                  Public Health
+                  <br />
+                  Community Builder
+                </span>
               </div>
+
             </div>
           </div>
 
@@ -45,103 +56,133 @@ export default function About() {
 
       <Principles />
 
-      {/* Let's Connect Section */}
-      <section className="connect-section">
-        <div className="connect-container">
-          <h2 className="connect-title">Let's connect.</h2>
-          <a href="#contact" className="connect-button">
-            Initiate Contact <span className="arrow">→</span>
-          </a>
-        </div>
-      </section>
-
       <style>{`
+
         .about-section {
           width: 100%;
           min-height: 100vh;
-          background:white;
+
+          background: #faf6f0;
+
           display: flex;
           align-items: center;
           justify-content: center;
+
           box-sizing: border-box;
-          padding-top: 120px !important;
-          padding-bottom: 100px !important;
-          padding-left: 80px !important;
-          padding-right: 80px !important;
+
+          padding:
+            120px
+            80px
+            100px;
+
           overflow: hidden;
         }
 
         .about-container {
           width: 100%;
           max-width: 1152px;
-          margin-left: auto !important;
-          margin-right: auto !important;
+
+          margin:
+            0 auto;
+
           display: grid;
-          grid-template-columns: 1fr 1fr;
+
+          grid-template-columns:
+            1fr
+            1fr;
+
           gap: 70px;
+
           align-items: center;
         }
 
         .about-content {
           width: 100%;
+
           display: flex;
           flex-direction: column;
           justify-content: center;
-          text-align: left !important;
+
+          text-align: left;
         }
 
         .about-title {
           width: 100%;
-          margin: 0 0 24px 0 !important;
-          padding: 0 !important;
-          color: #28221f;
-          font-size: clamp(36px, 4vw, 42px);
-          line-height: 1.2;
-          font-weight: 700;
-          letter-spacing: -1px;
-          text-align: left !important;
-        }
 
-        .about-title::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 0;
+          margin:
+            0 0 24px;
+
+          padding: 0;
+
+          color: #28221f;
+
+          font-size:
+            clamp(
+              40px,
+              4vw,
+              52px
+            );
+
+          line-height: 1.1;
+
+          font-weight: 700;
+
+          letter-spacing: -1.5px;
+
+          text-align: left;
         }
 
         .about-text {
           width: 100%;
+
           max-width: 620px;
-          margin: 0 !important;
-          padding: 0 !important;
+
+          margin: 0;
+
+          padding: 0;
+
           color: #5c534e;
+
           font-size: 18px;
-          line-height: 1.75;
+
+          line-height: 1.8;
+
           font-weight: 400;
-          text-align: left !important;
+
+          text-align: left;
         }
 
         .about-image-section {
           width: 100%;
+
           display: flex;
+
           justify-content: flex-end;
+
           align-items: center;
         }
 
         .about-image-frame {
           position: relative;
+
           width: 100%;
+
           max-width: 440px;
+
           aspect-ratio: 4 / 4.8;
         }
 
         .about-grey-box {
           position: absolute;
+
           top: 0;
           right: 0;
+
           width: 88%;
           height: 88%;
-          background: #b5b0aa;
+
+          background: #464b50;
+
           clip-path: polygon(
             0 0,
             100% 0,
@@ -153,30 +194,53 @@ export default function About() {
 
         .about-image-wrapper {
           position: absolute;
+
           top: 24px;
           left: 24px;
+
           width: 88%;
           height: 88%;
+
           overflow: hidden;
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-          filter: grayscale(100%) contrast(125%);
+
+          background: #5c534e;
+
+          box-shadow:
+            0 25px 50px
+            rgba(
+              40,
+              34,
+              31,
+              0.25
+            );
+
+          filter:
+            grayscale(100%)
+            contrast(125%);
         }
 
         .about-image {
           width: 100%;
           height: 100%;
+
           display: block;
+
           object-fit: cover;
+
           object-position: top center;
         }
 
         .about-orange-box {
           position: absolute;
+
           bottom: 0;
           left: 0;
-          width: 112px;
-          height: 112px;
+
+          width: 145px;
+          height: 145px;
+
           background: #f29452;
+
           clip-path: polygon(
             0 0,
             100% 0,
@@ -184,210 +248,418 @@ export default function About() {
             85% 100%,
             0 100%
           );
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+          box-shadow:
+            0 15px 30px
+            rgba(
+              40,
+              34,
+              31,
+              0.18
+            );
+
           display: flex;
+
           align-items: center;
           justify-content: center;
-          padding: 10px;
-          color: #ffffff;
-          font-size: 17px;
+
+          padding: 15px;
+
+          color: #28221f;
+
+          font-size: 13px;
+
           font-weight: 800;
-          line-height: 1.1;
-          letter-spacing: 0.6px;
+
+          line-height: 1.35;
+
+          letter-spacing: 1px;
+
           text-transform: uppercase;
+
+          text-align: center;
+
+          transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
+        }
+
+        .about-orange-box:hover {
+          transform:
+            translateY(-7px);
+
+          box-shadow:
+            0 22px 38px
+            rgba(
+              40,
+              34,
+              31,
+              0.24
+            );
         }
 
         .about-orange-box span {
+          display: block;
+
           width: 100%;
-          text-align: center;
         }
 
-        /* Let's Connect Section Styles */
         .connect-section {
           width: 100%;
+
           background: #faf6f0;
-          padding: 80px 80px 100px 80px;
+
+          padding:
+            80px
+            80px
+            100px;
+
           box-sizing: border-box;
+
           display: flex;
+
           justify-content: center;
         }
 
         .connect-container {
           width: 100%;
+
           max-width: 1152px;
+
           display: flex;
+
           justify-content: space-between;
+
           align-items: center;
-          border-top: 1px solid rgba(40, 34, 31, 0.1);
+
+          border-top:
+            1px solid
+            rgba(
+              40,
+              34,
+              31,
+              0.12
+            );
+
           padding-top: 60px;
         }
 
         .connect-title {
           color: #28221f;
-          font-size: clamp(32px, 3vw, 42px);
+
+          font-size:
+            clamp(
+              32px,
+              3vw,
+              42px
+            );
+
           line-height: 1.2;
+
           font-weight: 700;
+
           letter-spacing: -1px;
+
           margin: 0;
         }
 
         .connect-button {
-          background: #4a5056;
+          background: #464b50;
+
           color: #ffffff;
-          padding: 16px 28px;
+
+          padding:
+            16px
+            28px;
+
           font-size: 16px;
-          font-weight: 500;
+
+          font-weight: 600;
+
           text-decoration: none;
+
           display: inline-flex;
+
           align-items: center;
-          gap: 10px;
-          clip-path: polygon(0 0, 100% 0, 100% 72%, 86% 100%, 0 100%);
-          transition: transform 0.25s ease, filter 0.25s ease, background 0.2s ease;
-          box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+
+          gap: 12px;
+
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 72%,
+            86% 100%,
+            0 100%
+          );
+
+          transition:
+            transform 0.3s ease,
+            background 0.3s ease,
+            box-shadow 0.3s ease;
         }
 
         .connect-button:hover {
-          background: #3b4045;
-          transform: translateY(-2px);
-          filter: brightness(1.03);
+          background: #28221f;
+
+          transform:
+            translateY(-4px);
+
+          box-shadow:
+            0 12px 25px
+            rgba(
+              40,
+              34,
+              31,
+              0.18
+            );
         }
 
         .arrow {
-          font-size: 18px;
+          font-size: 20px;
+
+          transition:
+            transform 0.3s ease;
+        }
+
+        .connect-button:hover .arrow {
+          transform:
+            translateX(5px);
         }
 
         @media (max-width: 1024px) {
+
           .about-section {
-            padding-left: 50px !important;
-            padding-right: 50px !important;
-            padding-top: 110px !important;
-            padding-bottom: 80px !important;
+            padding:
+              110px
+              50px
+              80px;
           }
+
           .about-container {
             gap: 50px;
           }
+
           .about-title {
-            font-size: 52px;
+            font-size: 48px;
           }
+
           .about-text {
             font-size: 17px;
-            line-height: 1.7;
+
+            line-height: 1.75;
           }
+
+          .about-orange-box {
+            width: 130px;
+            height: 130px;
+
+            font-size: 12px;
+          }
+
           .connect-section {
-            padding: 60px 50px 80px 50px;
+            padding:
+              60px
+              50px
+              80px;
           }
+
           .connect-title {
             font-size: 40px;
           }
         }
 
         @media (max-width: 767px) {
+
           .about-section {
-            width: 100% !important;
-            min-height: auto !important;
-            display: block !important;
-            padding-top: 110px !important;
-            padding-bottom: 70px !important;
-            padding-left: 24px !important;
-            padding-right: 24px !important;
-            box-sizing: border-box !important;
+            width: 100%;
+
+            min-height: auto;
+
+            display: block;
+
+            padding:
+              110px
+              24px
+              70px;
+
+            box-sizing: border-box;
           }
+
           .about-container {
-            width: 100% !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 55px !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 55px;
+
+            margin:
+              0;
           }
+
           .about-content {
-            width: 100% !important;
-            display: block !important;
-            text-align: left !important;
+            width: 100%;
+
+            display: block;
+
+            text-align: left;
           }
+
           .about-title {
-            width: 100% !important;
-            margin: 0 0 18px 0 !important;
-            padding: 0 !important;
-            font-size: 40px !important;
-            line-height: 1.1 !important;
-            letter-spacing: -0.8px !important;
-            text-align: left !important;
+            width: 100%;
+
+            margin:
+              0 0 18px;
+
+            font-size: 40px;
+
+            line-height: 1.1;
+
+            letter-spacing: -1px;
+
+            text-align: left;
           }
+
           .about-text {
-            width: 100% !important;
-            max-width: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            font-size: 15px !important;
-            line-height: 1.75 !important;
-            text-align: left !important;
+            width: 100%;
+
+            max-width: none;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            text-align: left;
           }
+
           .about-image-section {
-            width: 100% !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            padding: 0 !important;
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 0;
           }
+
           .about-image-frame {
-            width: 100% !important;
-            max-width: 340px !important;
-            aspect-ratio: 4 / 4.8 !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
+            width: 100%;
+
+            max-width: 340px;
+
+            aspect-ratio: 4 / 4.8;
+
+            margin:
+              0 auto;
           }
+
           .about-grey-box {
-            width: 88% !important;
-            height: 88% !important;
+            width: 88%;
+            height: 88%;
           }
+
           .about-image-wrapper {
-            top: 18px !important;
-            left: 18px !important;
-            width: 88% !important;
-            height: 88% !important;
+            top: 18px;
+            left: 18px;
+
+            width: 88%;
+            height: 88%;
           }
+
           .about-orange-box {
-            width: 82px !important;
-            height: 82px !important;
-            padding: 8px !important;
-            font-size: 12px !important;
+            width: 105px;
+            height: 105px;
+
+            padding: 10px;
+
+            font-size: 9px;
+
+            line-height: 1.35;
+
+            letter-spacing: 0.7px;
           }
+
           .connect-section {
-            padding: 40px 24px 60px 24px;
+            padding:
+              40px
+              24px
+              60px;
           }
+
           .connect-container {
             flex-direction: column;
+
             align-items: flex-start;
+
             gap: 30px;
+
             padding-top: 40px;
           }
+
           .connect-title {
             font-size: 36px;
+          }
+
+          .connect-button {
+            padding:
+              15px
+              24px;
+
+            font-size: 14px;
           }
         }
 
         @media (max-width: 400px) {
+
           .about-section {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            padding-top: 100px !important;
+            padding:
+              100px
+              20px
+              65px;
           }
+
           .about-title {
-            font-size: 36px !important;
-            margin-bottom: 16px !important;
+            font-size: 36px;
+
+            margin-bottom: 16px;
           }
+
           .about-text {
-            font-size: 14px !important;
-            line-height: 1.7 !important;
+            font-size: 14px;
+
+            line-height: 1.75;
           }
+
           .about-container {
-            gap: 45px !important;
+            gap: 45px;
           }
+
           .about-image-frame {
-            max-width: 310px !important;
+            max-width: 310px;
+          }
+
+          .about-orange-box {
+            width: 94px;
+            height: 94px;
+
+            font-size: 8px;
+
+            padding: 8px;
+          }
+
+          .connect-section {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+
+          .connect-title {
+            font-size: 32px;
           }
         }
+
       `}</style>
     </>
   );
