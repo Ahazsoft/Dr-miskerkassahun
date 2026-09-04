@@ -1,11 +1,12 @@
 import React from 'react';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import professionalImage from '../assets/images/img1.jpg';
-import leadershipImage from '../assets/images/img5.jpg';
-import advocacyImage from '../assets/images/public_speaking.jpg';
-import cultureImage from '../assets/images/img3.jpg';
+import professionalImage from '../assets/images/educ.jpg';
+import leadershipImage from '../assets/images/img1.jpg';
+import advocacyImage from '../assets/images/miss_afri.jpg';
+import cultureImage from '../assets/images/img1.jpg';
 
+import '../styles/principleDetail.css';
 const principleContent = {
   'professional-background': {
     title: 'Professional Background',
@@ -90,173 +91,7 @@ export default function PrincipleDetail() {
         </Link>
       </div>
 
-      <style>{`
-        .principle-detail-page {
-          min-height: 100vh;
-          padding: 145px 32px 100px;
-          background: #ffffff;
-          color: #28221f;
-        }
-
-        .principle-detail-container {
-          width: 100%;
-          max-width: 1050px;
-          margin: 0 auto;
-        }
-
-        .principle-back-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 9px;
-          color: #3b4042;
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: 1.5px;
-          text-decoration: none;
-          text-transform: uppercase;
-        }
-
-        .principle-detail-hero {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) 330px;
-          gap: 0;
-          align-items: stretch;
-          margin-top: 65px;
-          background: #faf6f0;
-          clip-path: polygon(0 0, 100% 0, 100% 94%, 96% 100%, 0 100%);
-          box-shadow: 0 18px 40px rgba(40,34,31,0.08);
-        }
-
-        .principle-detail-copy {
-          max-width: 720px;
-          padding: 65px 70px 75px;
-        }
-
-        .principle-detail-label {
-          color: #f29452;
-          font-size: 10px;
-          font-weight: 800;
-          letter-spacing: 2.5px;
-          text-transform: uppercase;
-        }
-
-        .principle-detail-copy h1 {
-          max-width: 700px;
-          margin: 18px 0 24px;
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: clamp(48px, 6vw, 78px);
-          font-weight: 400;
-          line-height: 0.98;
-        }
-
-        .principle-detail-summary {
-          max-width: 650px;
-          margin: 0;
-          color: #5c534e;
-          font-size: 20px;
-          line-height: 1.6;
-        }
-
-        .principle-detail-body {
-          max-width: 650px;
-          margin-top: 38px;
-        }
-
-        .principle-detail-body p {
-          margin: 0 0 18px;
-          color: #716861;
-          font-size: 15px;
-          line-height: 1.85;
-        }
-
-        .principle-detail-mark {
-          position: relative;
-          min-height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 18px;
-          overflow: hidden;
-          background: #3b4042;
-          color: #f29452;
-          clip-path: polygon(14% 0, 100% 0, 100% 94%, 86% 100%, 0 100%, 0 8%);
-        }
-
-
-        .principle-detail-image {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-          display: block;
-        }
-
-        .principle-detail-action {
-          display: inline-flex;
-          align-items: center;
-          gap: 25px;
-          margin-top: 32px;
-          color: #ffffff;
-          background: #28221f;
-          padding: 6px 6px 6px 23px;
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: 1.5px;
-          text-decoration: none;
-          text-transform: uppercase;
-        }
-
-        .principle-detail-arrow {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 44px;
-          height: 44px;
-          background: #f29452;
-          color: #28221f;
-          transition: transform 0.35s ease;
-        }
-
-        .principle-detail-action:hover .principle-detail-arrow {
-          transform: rotate(45deg);
-        }
-
-        @media (max-width: 700px) {
-          .principle-detail-page {
-            padding: 120px 20px 70px;
-          }
-
-          .principle-detail-hero {
-            display: block;
-            margin-top: 60px;
-          }
-
-          .principle-detail-copy {
-            padding: 42px 25px 50px;
-          }
-
-          .principle-detail-copy h1 {
-            font-size: 52px;
-          }
-
-          .principle-detail-summary {
-            font-size: 17px;
-          }
-
-          .principle-detail-mark {
-            min-height: 150px;
-            padding: 0;
-            clip-path: none;
-          }
-
-          .principle-detail-image {
-            height: 100%;
-          }
-        }
-      `}</style>
+    
     </main>
   );
 }

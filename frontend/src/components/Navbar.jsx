@@ -112,7 +112,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Dropdown Menu (White Blur Theme) */}
-        <div className={`absolute top-full left-0 w-full backdrop-blur-xl bg-white/95 border-b border-gray-200 shadow-2xl flex flex-col items-center py-6 space-y-4 transition-all duration-300 ease-in-out lg:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+        <div className={`absolute top-full left-0 w-full backdrop-blur-xl bg-white/95 border-b border-gray-200 shadow-2xl flex flex-col items-center px-5 py-4 space-y-2 transition-all duration-300 ease-in-out lg:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
           {navLinks.map((link, index) => {
             const isActive = location.pathname === link.path;
             return (
@@ -124,35 +124,18 @@ export default function Navbar() {
                   fontSize: '16px',
                   fontWeight: isActive ? '600' : '500',
                   color: isActive ? '#f29452' : '#4a423d',
-                  textDecoration: 'none'
+                  textDecoration: 'none',
+                  width: '100%',
+                  padding: '12px 8px',
+                  textAlign: 'center',
+                  borderBottom: '1px solid rgba(74, 66, 61, 0.12)',
                 }}
-                className="transition-colors duration-200 hover:text-[#f29452]"
+                className="!text-center transition-colors duration-200 hover:text-[#f29452]"
               >
                 {link.name}
               </Link>
             );
           })}
-          <Link
-            to="/contact"
-            onClick={closeMenu}
-            style={{
-              backgroundColor: '#f29452',
-              color: '#28221f',
-              padding: '12px 36px',
-              fontSize: '11px',
-              fontWeight: '800',
-              letterSpacing: '2.5px',
-              textDecoration: 'none',
-              marginTop: '8px',
-              clipPath: 'polygon(0 0, 100% 0, 100% 75%, 86% 100%, 0 100%)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            className="transition-all duration-300 hover:bg-[#ff9f5a]"
-          >
-            GET IN TOUCH
-          </Link>
         </div>
 
       </div>
