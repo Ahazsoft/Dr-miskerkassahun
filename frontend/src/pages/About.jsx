@@ -2,6 +2,7 @@ import React from 'react';
 import img1 from '../assets/images/img2.jpg';
 import Principles from './Principles';
 import '../styles/about.css';
+
 export default function About() {
   return (
     <>
@@ -39,13 +40,20 @@ export default function About() {
               </div>
 
               <div className="about-orange-box">
-                <span>
-                  Medical Doctor
-                  <br />
-                  Public Health
-                  <br />
-                  Community Builder
-                </span>
+                <div className="badge-list">
+                  <span className="badge-item">
+                    <span className="badge-dot"></span>
+                    Medical Doctor
+                  </span>
+                  <span className="badge-item">
+                    <span className="badge-dot"></span>
+                    Public Health
+                  </span>
+                  <span className="badge-item">
+                    <span className="badge-dot"></span>
+                    Community Builder
+                  </span>
+                </div>
               </div>
 
             </div>
@@ -55,7 +63,6 @@ export default function About() {
       </section>
 
       <Principles />
-
     </>
   );
 }

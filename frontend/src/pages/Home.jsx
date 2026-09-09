@@ -73,8 +73,7 @@ export default function Home() {
                 className="
                   home-hero-button
                   flex items-center justify-center
-                  w-[160px] h-[44px]
-                  sm:w-[170px] sm:h-[48px]
+                  w-[190px] h-[54px]
                   bg-[#28221f] text-white
                   hover:bg-[#f29452]
                   transition-all duration-300
