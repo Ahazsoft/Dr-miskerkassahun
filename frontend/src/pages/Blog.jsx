@@ -124,45 +124,11 @@ export default function Blog() {
           </Link>
         </div>
 
-        {/* Hide featured grid dynamically when user is actively searching */}
-        {!isSearching && (
-          <>
-            <div className="featured-grid">
-              {featuredPosts.map((post) => (
-                <article
-                  className="featured-card"
-                  key={post.id}
-                  onClick={() => navigate(`/blog/${post.id}`)}
-                >
-                  <div className="card-image">
-                    <img src={post.image} alt={post.title} />
-                    <div className="image-overlay"></div>
-                    <span className="category-badge">{post.category}</span>
-                  </div>
-
-                  <div className="card-content">
-                    <h2>{post.title}</h2>
-                    <p>{post.description}</p>
-                    <div className="card-meta">
-                      <span><i>•</i>{post.type}</span>
-                      <span><i>•</i>{post.date}</span>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="blog-divider"></div>
-          </>
-        )}
 
         <div className="all-posts-layout" id="all-blog-posts">
           <main className="posts-area">
 
             <div className="section-heading">
-              <div className="section-title-group">
-                <span className="section-kicker">EXPLORE</span>
-                <h2 className="section-main-title">More from the Blog</h2>
-              </div>
               <span className="post-count">
                 {isSearching ? `${searchResults.length} RESULTS` : `${remainingPosts.length} POSTS`}
               </span>

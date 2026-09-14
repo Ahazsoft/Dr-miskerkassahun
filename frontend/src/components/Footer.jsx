@@ -1,103 +1,303 @@
 import React from 'react';
-import { FaYoutube, FaInstagram, FaFacebookF, FaXTwitter } from 'react-icons/fa6';
-
-const socialLinks = [
-  { label: 'YouTube', Icon: FaYoutube, href: 'http://www.youtube.com/@MiskerKassahun' },
-  { label: 'Instagram', Icon: FaInstagram, href: 'https://www.instagram.com/miskerkassahun/' },
-  { label: 'Facebook', Icon: FaFacebookF, href: 'http://facebook.com/misker.kassahun' },
-  { label: 'Twitter', Icon: FaXTwitter, href: 'https://x.com/MiskerKassahun' },
-];
+import {
+  FaYoutube,
+  FaInstagram,
+  FaFacebookF,
+  FaTwitter,
+} from 'react-icons/fa';
 
 export default function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="footer-inner">
-        <p className="footer-copy">Copyright © 2026 AHAZ</p>
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about-detail' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Services', path: '/services' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
-        <div className="social-links" aria-label="Social media links">
-          {socialLinks.map(({ label, Icon, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={label}
-              className="social-link"
+  const socialLinks = [
+    {
+      name: 'YouTube',
+      url: 'http://www.youtube.com/@MiskerKassahun',
+      icon: <FaYoutube />,
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.instagram.com/miskerkassahun/',
+      icon: <FaInstagram />,
+    },
+    {
+      name: 'Facebook',
+      url: 'http://facebook.com/misker.kassahun',
+      icon: <FaFacebookF />,
+    },
+    {
+      name: 'Twitter',
+      url: 'https://x.com/MiskerKassahun',
+      icon: <FaTwitter />,
+    },
+  ];
+
+  return (
+    <footer
+      style={{
+        background: '#28221f',
+        color: '#ffffff',
+        marginTop: '80px',
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: '70px 80px 35px',
+        }}
+      >
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1.5fr 1fr 1fr',
+            gap: '80px',
+            paddingBottom: '55px',
+          }}
+        >
+          <div>
+            <h2
+              style={{
+                margin: '0 0 20px',
+                fontSize: '30px',
+                fontWeight: '700',
+                letterSpacing: '-0.5px',
+              }}
             >
-              <Icon />
+              Dr. Misker Kassahun
+            </h2>
+
+            <p
+              style={{
+                margin: 0,
+                maxWidth: '430px',
+                color: '#cfc8c4',
+                fontSize: '15px',
+                lineHeight: '1.8',
+              }}
+            >
+              Professional medical care dedicated to providing trusted,
+              compassionate, and high-quality healthcare services.
+            </p>
+
+            <div
+              style={{
+                display: 'flex',
+                gap: '12px',
+                marginTop: '30px',
+              }}
+            >
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '50%',
+                    border: '1px solid rgba(255,255,255,0.25)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#ffffff',
+                    background: 'transparent',
+                    fontSize: '18px',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = '#F29452';
+                    e.currentTarget.style.borderColor = '#F29452';
+                    e.currentTarget.style.color = '#28221f';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.borderColor =
+                      'rgba(255,255,255,0.25)';
+                    e.currentTarget.style.color = '#ffffff';
+                  }}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3
+              style={{
+                margin: '0 0 25px',
+                fontSize: '16px',
+                fontWeight: '700',
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Navigation
+            </h3>
+
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '15px',
+              }}
+            >
+              {navLinks.map((link) => (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  style={{
+                    color: '#cfc8c4',
+                    textDecoration: 'none',
+                    fontSize: '15px',
+                    transition: 'color 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#F29452';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#cfc8c4';
+                  }}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3
+              style={{
+                margin: '0 0 25px',
+                fontSize: '16px',
+                fontWeight: '700',
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Contact
+            </h3>
+
+            <p
+              style={{
+                margin: '0 0 25px',
+                color: '#cfc8c4',
+                fontSize: '15px',
+                lineHeight: '1.8',
+                maxWidth: '300px',
+              }}
+            >
+              Get in touch for appointments, inquiries, and more information.
+            </p>
+
+            <a
+              href="/contact"
+              style={{
+                width: '195px',
+                height: '52px',
+                background: '#F29452',
+                color: '#28221f',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textDecoration: 'none',
+                fontSize: '13px',
+                fontWeight: '700',
+                letterSpacing: '2px',
+                clipPath:
+                  'polygon(0 0, 100% 0, 100% 68%, 88% 100%, 0 100%)',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#e88948';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#F29452';
+              }}
+            >
+              GET IN TOUCH
             </a>
-          ))}
+          </div>
+        </div>
+
+        <div
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.15)',
+            paddingTop: '25px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px',
+          }}
+        >
+          <p
+            style={{
+              margin: 0,
+              color: '#aaa19c',
+              fontSize: '13px',
+            }}
+          >
+            Copyright © 2026 AHAZ. All rights reserved.
+          </p>
+
+          <p
+            style={{
+              margin: 0,
+              color: '#aaa19c',
+              fontSize: '13px',
+            }}
+          >
+            Dr. Misker Kassahun
+          </p>
         </div>
       </div>
 
-      <style>{`
-        .site-footer {
-          width: 100%;
-          background: #28221f;
-          color: #f5eee8;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
+      <style>
+        {`
+          @media (max-width: 1000px) {
+            footer > div > div:first-child {
+              grid-template-columns: 1fr 1fr !important;
+              gap: 50px !important;
+            }
 
-        .footer-inner {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 22px 24px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 20px;
-        }
-
-        .footer-copy {
-          margin: 0;
-          font-size: 13px;
-          letter-spacing: 0.05em;
-          color: #f1e7df;
-        }
-
-        .social-links {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .social-link {
-          width: 34px;
-          height: 34px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          border: 1px solid rgba(242, 148, 82, 0.7);
-          color: #f29452;
-          background: rgba(242, 148, 82, 0.05);
-          border-radius: 50%;
-          transition: all 0.25s ease;
-        }
-
-        .social-link:hover {
-          background: #f29452;
-          color: #28221f;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 18px rgba(242, 148, 82, 0.2);
-        }
-
-        .social-link svg {
-          width: 14px;
-          height: 14px;
-        }
-
-        @media (max-width: 640px) {
-          .footer-inner {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px 16px;
+            footer > div > div:first-child > div:first-child {
+              grid-column: 1 / -1;
+            }
           }
 
-          .footer-copy {
-            font-size: 12px;
+          @media (max-width: 650px) {
+            footer > div {
+              padding: 55px 25px 30px !important;
+            }
+
+            footer > div > div:first-child {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+            }
+
+            footer > div > div:first-child > div:first-child {
+              grid-column: auto;
+            }
+
+            footer > div > div:last-child {
+              flex-direction: column !important;
+              align-items: flex-start !important;
+            }
           }
-        }
-      `}</style>
+        `}
+      </style>
     </footer>
   );
 }

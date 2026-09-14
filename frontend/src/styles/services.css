@@ -165,22 +165,43 @@
 .service-nav-item:hover .nav-arrow {
   background: #f29452;
   color: #28221f;
-  transform: none;
+  transform: rotate(45deg);
   border-radius: 0;
+  box-shadow: 0 4px 12px rgba(242, 148, 82, 0.35);
 }
 
- .nav-arrow svg:hover {
-  transform:  rotate(45deg);
+.service-nav-item:hover .nav-arrow .nav-arrow-hover-icon {
+  transform: rotate(-45deg);
+}
+
+.nav-arrow .nav-arrow-hover-icon {
+  display: none;
+}
+
+.service-nav-item:hover .nav-arrow .nav-arrow-icon {
+  display: none;
+}
+
+.service-nav-item:hover .nav-arrow .nav-arrow-hover-icon {
+  display: block;
 }
 
 .service-nav-item.active .nav-arrow {
-  background: transparent;
-  color: #ffffff;
-  transform: none;
+  background: #f29452;
+  color: #28221f;
+  transform: rotate(45deg);
 }
 
-.service-nav-item.active .nav-arrow svg {
-  transform: none;
+.service-nav-item.active .nav-arrow .nav-arrow-hover-icon {
+  transform: rotate(-45deg);
+}
+
+.service-nav-item.active .nav-arrow .nav-arrow-icon {
+  display: none;
+}
+
+.service-nav-item.active .nav-arrow .nav-arrow-hover-icon {
+  display: block;
 }
 
 .services-preview-panel {

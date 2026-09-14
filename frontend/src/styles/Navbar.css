@@ -1,213 +1,561 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-.navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  background-color: transparent;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
+  overflow-x: hidden;
+}
+
+body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.navbar-container {
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
   width: 100%;
-  max-width: 1200px;
-  height: 140px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  height: 76px;
+
+  z-index: 9999;
+
+  background: transparent;
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* When scrolling */
+
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom: 1px solid rgba(74, 66, 61, 0.12);
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   NAVBAR CONTAINER
+========================================================= */
+
+.navbar-container {
+  position: relative;
+
+  width: 100%;
+  height: 76px;
+
+  margin: 0;
+
+  /*
+    THIS CONTROLS LEFT AND RIGHT PADDING
+  */
+
+  padding-left: 80px;
+  padding-right: 80px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo-wrapper {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-logo {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-  text-decoration: none;
-  padding-left: 1.5rem; /* Added left padding */
-  padding-right: 1.5rem; /* Added right padding */
+  display: block;
+
+  height: 56px;
+  width: auto;
+
+  object-fit: contain;
+
+  background: #ffffff;
+
+  padding: 4px 10px;
+
+  border-radius: 2px;
+
+  transition: transform 0.3s ease;
 }
+
+.navbar-logo-link:hover .navbar-logo {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
 
 .navbar-links {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
   display: flex;
   align-items: center;
-  gap: 2rem;
+
+  gap: 36px;
+
+  white-space: nowrap;
 }
 
-.navbar-links a {
+
+/* Individual links */
+
+.navbar-link {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 5px 0;
+
   font-family: "Plus Jakarta Sans", sans-serif;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.4;
+
   letter-spacing: 0.2px;
-  transition: color 0.2s ease;
+
+  color: #4a423d;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.navbar-links a:hover {
+
+/* Hover */
+
+.navbar-link:hover {
+  color: #f29452;
+
+  transform: translateY(-1px);
+}
+
+
+/* Active link */
+
+.navbar-link.active {
   color: #f29452;
 }
 
-.get-in-touch {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 64px;
-  min-width: 160px;
-  padding: 0 40px; /* Increased internal padding left and right */
-  background-color: #f29452;
-  color: #ffffff !important;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.2px;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-left: 1.5rem; /* Added external left padding/margin */
-  margin-right: 1.5rem; /* Added external right padding/margin */
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease;
+
+/* Active underline */
+
+.navbar-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -3px;
+
+  width: 100%;
+  height: 2px;
+
+  background: #f29452;
 }
 
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.navbar-right {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   GET IN TOUCH BUTTON
+========================================================= */
+
+.get-in-touch {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 195px;
+  height: 52px;
+
+  padding: 0 28px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 11.5px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #28221f;
+
+  background: #f29452;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 65%,
+    88% 100%,
+    0 100%
+  );
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
 .get-in-touch:hover {
-  background-color: #e6813d;
-  color: #ffffff !important;
+  background: #ff9f5a;
+
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+
   transform: translateY(-2px);
 }
 
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
 .navbar-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+
+  width: 44px;
+  height: 44px;
+
+  margin: 0;
   padding: 8px;
-  cursor: pointer;
-  border: none;
+
   background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
 }
 
-.bar {
-  width: 26px;
-  height: 3px;
-  background-color: #ffffff;
-  transition: 0.3s ease;
+
+.navbar-toggle span {
+  display: block;
+
+  width: 25px;
+  height: 2px;
+
+  background: #4a423d;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
-/* Tablet */
-@media (max-width: 968px) {
+
+/* Hamburger animation */
+
+.navbar-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 1023px) {
+
   .navbar {
-    background-color: rgba(15, 23, 42, 0.9);
+    height: 72px;
   }
 
   .navbar-container {
-    height: 115px;
-    padding: 0 2rem;
-  }
+    height: 72px;
 
-  .navbar-logo {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /*
+      MOBILE LEFT AND RIGHT PADDING
+    */
+
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .navbar-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(15, 23, 42, 0.97);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    gap: 1.3rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
-
-  .navbar-links.active {
-    max-height: 500px;
-    padding: 1.8rem 0 2rem;
-  }
-
-  .navbar-links a {
-    font-size: 0.95rem;
+    display: none;
   }
 
   .get-in-touch {
-    height: 58px;
-    min-width: 150px;
-    padding: 0 32px;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    font-size: 0.9rem;
+    display: none;
   }
 
   .navbar-toggle {
     display: flex;
   }
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+
+    width: 100%;
+
+    display: block;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-bottom: 1px solid rgba(74, 66, 61, 0.12);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    backdrop-filter: blur(15px);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+      max-height 0.35s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+
+  .mobile-menu.open {
+    max-height: 600px;
+
+    opacity: 1;
+
+    visibility: visible;
+  }
+
+
+  .mobile-menu-links {
+    width: 100%;
+
+    padding: 20px 30px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0;
+  }
+
+
+  .mobile-link {
+    width: 100%;
+
+    padding: 15px 10px;
+
+    border-bottom: 1px solid rgba(74, 66, 61, 0.10);
+
+    text-align: center;
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #4a423d;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+  }
+
+
+  .mobile-link:hover,
+  .mobile-link.active {
+    color: #f29452;
+  }
+
+
+  .mobile-get-in-touch {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 52px;
+
+    margin-top: 20px;
+
+    padding: 0 35px;
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    font-size: 11.5px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #28221f;
+
+    background: #f29452;
+
+    text-decoration: none;
+
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 65%,
+      88% 100%,
+      0 100%
+    );
+
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+
+  .mobile-get-in-touch:hover {
+    background: #ff9f5a;
+
+    transform: translateY(-2px);
+  }
 }
 
-/* Mobile */
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
+
   .navbar-container {
-    height: 100px;
-    padding: 0 1.25rem;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .navbar-logo {
-    font-size: 1.3rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    height: 50px;
   }
 
-  .navbar-links a {
-    font-size: 0.9rem;
+  .navbar-toggle {
+    width: 42px;
+    height: 42px;
   }
 
-  .get-in-touch {
-    height: 54px;
-    min-width: 140px;
-    padding: 0 26px;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    font-size: 0.88rem;
-  }
-
-  .bar {
-    width: 24px;
-    height: 2.5px;
+  .mobile-menu-links {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
-/* Small Mobile */
-@media (max-width: 420px) {
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
   .navbar-container {
-    height: 92px;
-    padding: 0 1rem;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .navbar-logo {
-    font-size: 1.2rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    height: 46px;
   }
 
-  .get-in-touch {
-    height: 50px;
-    min-width: 132px;
-    padding: 0 22px;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-    font-size: 0.85rem;
+  .mobile-menu-links {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

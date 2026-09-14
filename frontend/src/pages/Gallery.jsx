@@ -157,16 +157,6 @@ export default function Gallery() {
             </button>
           </div>
         </div>
-
-        <div className="gallery-footer">
-          <span className="footer-line"></span>
-
-          <span className="footer-text">
-            MOMENTS · EXPERIENCES · JOURNEY
-          </span>
-
-          <span className="footer-line"></span>
-        </div>
       </div>
     </section>
   );

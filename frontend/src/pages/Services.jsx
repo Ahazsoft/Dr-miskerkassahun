@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import '../styles/services.css';
 const servicesData = [
   {
@@ -112,6 +112,12 @@ export default function Services() {
 
                       <div className="nav-arrow">
                         <ArrowUpRight
+                          className="nav-arrow-icon"
+                          size={19}
+                          strokeWidth={1.8}
+                        />
+                        <ArrowRight
+                          className="nav-arrow-hover-icon"
                           size={19}
                           strokeWidth={1.8}
                         />

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useForm } from '@formspree/react';
 import '../styles/contact.css';
+
 import {
   MapPin,
   Mail,
-  Phone,
-  Clock,
   ArrowUpRight,
   CheckCircle2,
+  AlertCircle,
 } from 'lucide-react';
 
 import {
@@ -17,16 +18,20 @@ import {
 } from 'react-icons/fa6';
 
 export default function Contact() {
+  const [state, formSubmit] = useForm('xzebnewy');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
+  useEffect(() => {
+    if (state.succeeded) {
+      setSubmitted(true);
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 4000);
-  };
+      const timer = setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
 
   return (
     <>
@@ -34,28 +39,36 @@ export default function Contact() {
         <div className="contact-wrapper">
 
           <div className="contact-header">
-            <span className="gallery-eyebrow">CONTACT ME</span>
+            <span className="gallery-eyebrow">
+              CONTACT ME
+            </span>
 
             <h1>Let&apos;s Connect</h1>
 
             <p>
               Whether you have a project, collaboration opportunity,
               speaking invitation, or simply want to say hello,
-              I'd love to hear from you.
+              I&apos;d love to hear from you.
             </p>
           </div>
 
           <div className="contact-grid">
 
+            {/* FORM */}
             <div className="form-card">
+
               <div className="form-heading">
                 <div>
                   <h2>Send a Message</h2>
-                  <p>Tell me a little about what you have in mind.</p>
+                  <p>
+                    Tell me a little about what you have in mind.
+                  </p>
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={formSubmit}>
+
+                {/* NAME */}
                 <div className="field-group">
                   <label htmlFor="name">
                     Full Name <span>*</span>
@@ -70,7 +83,9 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* EMAIL + PHONE */}
                 <div className="two-fields">
+
                   <div className="field-group">
                     <label htmlFor="email">
                       Email Address <span>*</span>
@@ -97,8 +112,10 @@ export default function Contact() {
                       placeholder="+251 ..."
                     />
                   </div>
+
                 </div>
 
+                {/* SERVICE */}
                 <div className="field-group">
                   <label htmlFor="service">
                     Service / Reason for Contact
@@ -113,32 +130,33 @@ export default function Contact() {
                       Select an option
                     </option>
 
-                    <option value="consulting">
+                    <option value="Healthcare Consulting">
                       Healthcare Consulting
                     </option>
 
-                    <option value="promotion">
+                    <option value="Digital Promotion">
                       Digital Promotion
                     </option>
 
-                    <option value="speaking">
+                    <option value="Public Speaking">
                       Public Speaking
                     </option>
 
-                    <option value="events">
+                    <option value="Event Planning & Management">
                       Event Planning & Management
                     </option>
 
-                    <option value="collaboration">
+                    <option value="Collaboration">
                       Collaboration
                     </option>
 
-                    <option value="other">
+                    <option value="Other">
                       Other
                     </option>
                   </select>
                 </div>
 
+                {/* MESSAGE */}
                 <div className="field-group">
                   <label htmlFor="message">
                     Your Message <span>*</span>
@@ -153,21 +171,38 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
+                {/* SUCCESS MESSAGE */}
                 {submitted && (
                   <div className="success-message">
                     <CheckCircle2 size={22} />
+
                     <span>
-                      Thank you! Your message has been received.
+                      Thank you! Your message has been sent successfully.
                     </span>
                   </div>
                 )}
 
+                {/* ERROR MESSAGE */}
+                {state.errors && (
+                  <div className="error-message">
+                    <AlertCircle size={22} />
+
+                    <span>
+                      Something went wrong. Please try again.
+                    </span>
+                  </div>
+                )}
+
+                {/* SUBMIT BUTTON */}
                 <button
                   type="submit"
                   className="submit-btn"
+                  disabled={state.submitting}
                 >
                   <span className="submit-text">
-                    Send Message
+                    {state.submitting
+                      ? 'Sending...'
+                      : 'Send Message'}
                   </span>
 
                   <span className="submit-icon">
@@ -177,12 +212,16 @@ export default function Contact() {
                     />
                   </span>
                 </button>
+
               </form>
             </div>
 
+            {/* RIGHT SIDE */}
             <div className="contact-side">
 
+              {/* INFORMATION CARD */}
               <div className="info-card">
+
                 <div className="info-decoration"></div>
                 <div className="info-decoration-small"></div>
 
@@ -193,20 +232,22 @@ export default function Contact() {
                 </div>
 
                 <h2>
-                  Let's create
+                  Let&apos;s create
                   <br />
                   something <span>meaningful.</span>
                 </h2>
 
                 <p className="info-intro">
-                  I'm open to meaningful collaborations,
+                  I&apos;m open to meaningful collaborations,
                   professional opportunities, speaking engagements,
                   public health initiatives, and creative projects.
                 </p>
 
                 <div className="contact-details">
 
+                  {/* LOCATION */}
                   <div className="contact-detail">
+
                     <div className="detail-icon">
                       <MapPin size={21} />
                     </div>
@@ -220,9 +261,12 @@ export default function Contact() {
                         Washington DC-Baltimore Area
                       </p>
                     </div>
+
                   </div>
 
+                  {/* EMAIL */}
                   <div className="contact-detail">
+
                     <div className="detail-icon">
                       <Mail size={21} />
                     </div>
@@ -236,12 +280,17 @@ export default function Contact() {
                         info@miskerkassahun.com
                       </p>
                     </div>
+
                   </div>
+
                 </div>
               </div>
 
+              {/* SOCIAL CARD */}
               <div className="social-card">
+
                 <div className="social-content">
+
                   <span className="social-label">
                     FOLLOW THE JOURNEY
                   </span>
@@ -249,6 +298,7 @@ export default function Contact() {
                   <h3>
                     Stay Connected
                   </h3>
+
                 </div>
 
                 <div className="social-links">
@@ -257,6 +307,8 @@ export default function Contact() {
                     href="https://www.instagram.com/miskerkassahun/"
                     aria-label="Instagram"
                     title="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaInstagram />
                   </a>
@@ -265,14 +317,18 @@ export default function Contact() {
                     href="https://www.linkedin.com/in/misker-kassahun/"
                     aria-label="LinkedIn"
                     title="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaLinkedinIn />
                   </a>
 
                   <a
-                    href="http://facebook.com/misker.kassahun"
+                    href="https://facebook.com/misker.kassahun"
                     aria-label="Facebook"
                     title="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaFacebookF />
                   </a>
@@ -281,33 +337,22 @@ export default function Contact() {
                     href="https://x.com/MiskerKassahun"
                     aria-label="X"
                     title="X"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaXTwitter />
                   </a>
 
                 </div>
+
               </div>
 
             </div>
-          </div>
 
-          <div className="contact-bottom">
-            <div className="bottom-line"></div>
-
-            <p>
-              Have an idea? Let's turn it into impact.
-            </p>
-
-            <ArrowUpRight
-              size={22}
-              strokeWidth={2}
-            />
           </div>
 
         </div>
       </section>
-
-     
     </>
   );
 }

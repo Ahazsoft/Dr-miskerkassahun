@@ -1,8 +1,9 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import profileImage from '../assets/images/about.png';
 import '../styles/aboutDetail.css';
+
 const detailedTimeline = [
   {
     year: 'Education',
@@ -61,13 +62,9 @@ const expertisePillars = [
 export default function AboutDetail() {
   return (
     <section className="about-detail-section">
-
       <div className="about-detail-container">
-
         <div className="about-hero-wrapper">
-
           <div className="about-hero-content">
-
             <span className="section-eyebrow">
               ABOUT DR. MISKER KASSAHUN
             </span>
@@ -91,123 +88,87 @@ export default function AboutDetail() {
             </p>
 
             <div className="hero-actions">
-
               <a
                 href="#expertise"
                 className="primary-btn"
               >
                 <span>Explore My Work</span>
-
                 <span className="btn-arrow">
                   <ArrowUpRight
+                    className="btn-arrow-icon"
+                    size={19}
+                    strokeWidth={2}
+                  />
+                  <ArrowRight
+                    className="btn-arrow-hover-icon"
                     size={19}
                     strokeWidth={2}
                   />
                 </span>
               </a>
-
             </div>
-
           </div>
 
           <div className="profile-card">
-
             <div className="profile-image-wrapper">
-
+              <div className="profile-circle-bg"></div>
               <img
                 src={profileImage}
                 alt="Dr. Misker Kassahun"
                 className="profile-image"
               />
-
-              <div className="profile-tags">
-                <span className="profile-tag">Johns Hopkins MPH</span>
-                <span className="profile-tag">St. Paul&apos;s MD</span>
-                <span className="profile-tag">GIV Society Co-Founder</span>
-              </div>
-
             </div>
-
           </div>
-
         </div>
-
 
         <div
           className="section-block"
           id="expertise"
         >
-
           <div className="section-header">
-
             <div>
-
               <span className="section-eyebrow">
                 EXPERTISE &amp; IMPACT
               </span>
-
               <h2 className="section-subheading">
                 Core Focus Areas
               </h2>
-
             </div>
-
           </div>
 
-
           <div className="expertise-list">
-
             {expertisePillars.map((pillar, index) => (
-
               <div
                 className="expertise-row"
                 key={index}
               >
-
                 <div className="expertise-content">
-
                   <h3>
                     {pillar.title}
                   </h3>
-
                   <p>
                     {pillar.description}
                   </p>
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
 
-
         <div className="section-block">
-
           <div className="section-header">
-
             <div>
-
               <span className="section-eyebrow">
                 BACKGROUND &amp; JOURNEY
               </span>
-
               <h2 className="section-subheading">
                 Professional Milestones
               </h2>
-
             </div>
-
           </div>
 
-
           <div className="timeline-wrapper">
-
             {detailedTimeline.map((item, index) => (
-
               <div
                 className={`timeline-card ${index % 2 === 0 ? 'timeline-light-card' : 'timeline-dark-card'}`}
                 key={index}
@@ -218,63 +179,43 @@ export default function AboutDetail() {
                   'global-advocacy-representation'
                 ][index]}
               >
-
                 <div className="timeline-card-content">
-
                   <div className="timeline-meta">
-
-                  <span className="timeline-year">
-                    {item.year}
-                  </span>
-
-                  <span className="timeline-org">
-                    {item.organization}
-                  </span>
-
+                    <span className="timeline-year">
+                      {item.year}
+                    </span>
+                    <span className="timeline-org">
+                      {item.organization}
+                    </span>
                   </div>
 
                   <div className="timeline-details">
-
-                  <h3>
-                    {item.role}
-                  </h3>
-
-                  <p>
-                    {item.description}
-                  </p>
-
+                    <h3>
+                      {item.role}
+                    </h3>
+                    <p>
+                      {item.description}
+                    </p>
                   </div>
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
 
         <div
           className="section-block passions-section"
           id="personal-passions-culture"
         >
-
           <div className="section-header">
-
             <div>
-
               <span className="section-eyebrow">
                 PERSONAL PASSIONS &amp; CULTURE
               </span>
-
               <h2 className="section-subheading">
                 The person behind the work
               </h2>
-
             </div>
-
           </div>
 
           <p className="passions-copy">
@@ -283,34 +224,26 @@ export default function AboutDetail() {
             Ethiopian feasts. These passions keep me curious and grounded while
             strengthening my commitment to representing Ethiopian culture.
           </p>
-
         </div>
 
-
         <div className="about-bottom">
-
           <div className="bottom-content">
-
             <span className="section-eyebrow">
               LET'S CREATE IMPACT
             </span>
-
             <h2>
               Turning knowledge
               <br />
               into meaningful action.
             </h2>
-
             <p>
               Whether through healthcare, public health, advocacy,
               speaking, or community building, every collaboration
               is an opportunity to create positive change.
             </p>
-
           </div>
 
-
-         <Link
+          <Link
             to="/contact"
             className="bottom-btn"
           >
@@ -318,16 +251,20 @@ export default function AboutDetail() {
               Start a Conversation
             </span>
             <span className="bottom-btn-arrow">
-              <ArrowUpRight size={20} strokeWidth={2} />
+              <ArrowUpRight
+                className="bottom-btn-arrow-icon"
+                size={20}
+                strokeWidth={2}
+              />
+              <ArrowRight
+                className="bottom-btn-arrow-hover-icon"
+                size={20}
+                strokeWidth={2}
+              />
             </span>
           </Link>
-
         </div>
-
       </div>
-
-
-     
     </section>
   );
 }
