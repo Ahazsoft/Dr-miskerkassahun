@@ -47,7 +47,7 @@ export default function Affilations() {
         {`
           .affiliations {
             width: 100%;
-            background:  #28221f;
+            background:  #f29452;
             overflow: hidden;
             padding: 15px 0;
             margin: 24px 0;

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .principle-detail-page {
   min-height: 100vh;
   padding: 132px 32px 96px;
   background: #ffffff;
   color: #28221f;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .principle-detail-container {
@@ -19,10 +19,10 @@
   align-items: center;
   gap: 9px;
   color: #6d625b;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 11px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.25s ease, transform 0.25s ease;
@@ -49,10 +49,10 @@
 .principle-detail-label {
   display: block;
   color: #f29452;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-align: left !important;
 }
@@ -61,11 +61,10 @@
   max-width: 700px;
   margin: 16px 0 26px;
   color: #28221f;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(42px, 5.2vw, 70px);
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -2.5px;
+  line-height: 1.15;
   text-align: left !important;
 }
 
@@ -73,10 +72,10 @@
   max-width: 650px;
   margin: 0;
   color: #5c534e;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.85;
   text-align: left !important;
 }
 
@@ -88,7 +87,7 @@
 .principle-detail-body p {
   margin: 0 0 18px;
   color: #716861;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.85;
@@ -127,10 +126,10 @@
   color: #ffffff;
   background: #28221f;
   padding: 6px 6px 6px 23px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 11px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -171,13 +170,12 @@
   }
 
   .principle-detail-copy h1 {
-    font-size: 48px;
-    letter-spacing: -1.8px;
+    font-size: 2.3rem;
   }
 
   .principle-detail-summary {
     font-size: 17px;
-    line-height: 1.7;
+    line-height: 1.85;
   }
 
   .principle-detail-body p {

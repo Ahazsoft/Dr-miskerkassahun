@@ -45,7 +45,7 @@ export default function Footer() {
         background: '#28221f',
         color: '#ffffff',
         marginTop: '80px',
-        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        fontFamily: '"Poppins", sans-serif',
       }}
     >
       <div

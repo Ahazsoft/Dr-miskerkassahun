@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,15 +8,21 @@
   width: 100%;
   min-height: 100vh;
   background: #ffffff;
-  padding: 150px 40px 100px;
+  padding: 150px 16px 100px;
   overflow-x: hidden;
   color: #28221f;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .contact-page {
+    padding: 150px 24px 100px;
+  }
 }
 
 .contact-wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -30,30 +36,38 @@
 .gallery-eyebrow {
   display: inline-block;
   margin-bottom: 14px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #f29452;
+  font-family: "Poppins", sans-serif;
   text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  .gallery-eyebrow {
+    font-size: 0.85rem;
+  }
 }
 
 .contact-header h1 {
   margin: 0;
-  font-size: clamp(36px, 4vw, 50px);
-  line-height: 1.1;
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  line-height: 1.15;
   font-weight: 700;
-  letter-spacing: -2px;
   color: #28221f;
   text-align: center !important;
 }
 
 .contact-header > p {
   max-width: 680px;
-  margin: 20px auto 0;
-  font-size: 16px;
-  line-height: 1.75;
+  margin: 18px auto 0;
+  font-size: 17px;
+  line-height: 1.85;
   color: #5c534e;
+  font-family: "Poppins", sans-serif;
   text-align: center !important;
 }
 
@@ -80,17 +94,25 @@
 
 .form-heading h2 {
   margin: 0 0 8px;
-  font-size: 34px;
-  line-height: 1.1;
-  font-weight: 750;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  font-weight: 700;
   color: #28221f;
+}
+
+@media (min-width: 768px) {
+  .form-heading h2 {
+    font-size: 1.85rem;
+  }
 }
 
 .form-heading p {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   color: #817872;
-  line-height: 1.5;
+  line-height: 1.85;
+  font-family: "Poppins", sans-serif;
 }
 
 .field-group {
@@ -101,8 +123,9 @@
   display: block;
   margin-bottom: 10px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: #3e3733;
+  font-family: "Poppins", sans-serif;
 }
 
 .field-group label span {
@@ -116,9 +139,9 @@
   border: 1px solid #d8d1cb;
   background: #fffdfb;
   border-radius: 4px;
-  padding: 16px 17px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
+  padding: 14px 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
   color: #28221f;
   outline: none;
   transition:
@@ -128,16 +151,16 @@
 }
 
 .field-group input {
-  height: 58px;
+  height: 54px;
 }
 
 .field-group select {
-  height: 58px;
+  height: 54px;
   cursor: pointer;
 }
 
 .field-group textarea {
-  min-height: 175px;
+  min-height: 165px;
   resize: vertical;
   line-height: 1.6;
 }
@@ -171,22 +194,23 @@
   color: #28734b;
   font-size: 15px;
   font-weight: 600;
+  font-family: "Poppins", sans-serif;
 }
 
 .submit-btn {
   width: 100%;
-  height: 68px;
+  height: 64px;
   border: none;
   background: #28221f;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 8px 8px 28px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1.8px;
+  padding: 6px 6px 6px 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
   transition:
@@ -200,16 +224,18 @@
 }
 
 .submit-text {
-  transition: transform 0.3s ease;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .submit-btn:hover .submit-text {
   transform: translateX(6px);
+  color: #28221f;
 }
 
 .submit-icon {
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
   background: #f29452;
   color: #28221f;
   display: flex;
@@ -218,6 +244,7 @@
   transition:
     background 0.3s ease,
     transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .submit-btn:hover .submit-icon {
@@ -254,25 +281,27 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .availability {
-  font-size: 10px;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.12em;
   color: #d6d1cd;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
   text-align: right;
 }
 
 .info-card h2 {
   position: relative;
   z-index: 2;
-  margin: 0 0 24px;
-  font-size: clamp(36px, 4vw, 52px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-  font-weight: 750;
+  margin: 0 0 20px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  line-height: 1.15;
+  font-weight: 700;
 }
 
 .info-card h2 span {
@@ -283,10 +312,11 @@
   position: relative;
   z-index: 2;
   max-width: 470px;
-  margin: 0 0 42px;
+  margin: 0 0 38px;
   color: #d8d4d0;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.85;
+  font-family: "Poppins", sans-serif;
 }
 
 .contact-details {
@@ -294,7 +324,7 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 22px;
 }
 
 .contact-detail {
@@ -304,8 +334,8 @@
 }
 
 .detail-icon {
-  width: 45px;
-  height: 45px;
+  width: 42px;
+  height: 42px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -316,19 +346,21 @@
 
 .detail-label {
   display: block;
-  margin-bottom: 5px;
-  font-size: 11px;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 1.3px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #bcb6b1;
+  font-family: "Poppins", sans-serif;
 }
 
 .contact-detail p {
   margin: 0;
   color: #ffffff;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
 }
 
 .social-card {
@@ -354,19 +386,22 @@
 
 .social-label {
   display: block;
-  margin-bottom: 7px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: #5c3824;
+  font-family: "Poppins", sans-serif;
 }
 
 .social-card h3 {
   margin: 0;
-  font-size: 30px;
-  line-height: 1.1;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
   color: #28221f;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .contact-page .social-links {
@@ -381,10 +416,10 @@
 }
 
 .contact-page .social-links a {
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
-  flex: 0 0 46px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  flex: 0 0 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -398,22 +433,18 @@
 }
 
 .contact-page .social-links a svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   flex-shrink: 0;
 }
 
 .contact-page .social-links a:hover {
   background: #ffffff;
   color: #28221f;
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 @media (max-width: 1050px) {
-  .contact-page {
-    padding: 130px 30px 80px;
-  }
-
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -444,18 +475,14 @@
 }
 
 @media (max-width: 700px) {
-  .contact-page {
-    padding: 110px 18px 65px;
-  }
-
   .contact-header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .contact-header > p {
-    margin-top: 23px;
-    font-size: 16px;
-    line-height: 1.65;
+    margin-top: 12px;
+    font-size: 17px;
+    line-height: 1.85;
     text-align: left !important;
   }
 
@@ -470,20 +497,20 @@
   }
 
   .form-card {
-    padding: 30px 20px;
+    padding: 24px;
   }
 
   .form-heading {
     gap: 13px;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
 
   .form-heading h2 {
-    font-size: 27px;
+    font-size: 1.35rem;
   }
 
   .form-heading p {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .two-fields {
@@ -492,7 +519,7 @@
   }
 
   .field-group {
-    margin-bottom: 23px;
+    margin-bottom: 22px;
   }
 
   .field-group label {
@@ -501,25 +528,24 @@
 
   .field-group input,
   .field-group select {
-    height: 56px;
-    font-size: 15px;
+    height: 48px;
+    font-size: 17px;
   }
 
   .field-group textarea {
-    min-height: 160px;
-    font-size: 15px;
+    min-height: 150px;
+    font-size: 17px;
   }
 
   .submit-btn {
-    height: 62px;
-    padding-left: 20px;
-    font-size: 11px;
-    letter-spacing: 1.4px;
+    height: 56px;
+    padding-left: 16px;
+    font-size: 12px;
   }
 
   .submit-icon {
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
   }
 
   .contact-side {
@@ -529,47 +555,37 @@
 
   .info-card {
     min-height: auto;
-    padding: 32px 25px 40px;
-    clip-path: polygon(
-      0 0,
-      calc(100% - 20px) 0,
-      100% 20px,
-      100% 100%,
-      20px 100%,
-      0 calc(100% - 20px)
-    );
+    padding: 30px 22px 36px;
   }
 
   .info-top {
-    margin-bottom: 38px;
+    margin-bottom: 34px;
   }
 
   .availability {
-    font-size: 8px;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
   }
 
   .info-card h2 {
-    font-size: 39px;
-    letter-spacing: -1.5px;
+    font-size: 1.35rem;
   }
 
   .info-intro {
-    font-size: 15px;
-    margin-bottom: 32px;
+    font-size: 17px;
+    margin-bottom: 28px;
   }
 
   .contact-details {
-    gap: 22px;
+    gap: 20px;
   }
 
   .detail-icon {
-    width: 41px;
-    height: 41px;
+    width: 38px;
+    height: 38px;
   }
 
   .contact-detail p {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .social-card {
@@ -583,13 +599,12 @@
 
   .social-label {
     margin-bottom: 2px;
-    font-size: 8px;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
     text-align: left !important;
   }
 
   .social-card h3 {
-    font-size: 23px;
+    font-size: 1.2rem;
     text-align: left !important;
   }
 
@@ -606,15 +621,15 @@
   }
 
   .contact-page .social-links a {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    flex: 0 0 40px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    flex: 0 0 38px;
   }
 
   .contact-page .social-links a svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -625,49 +640,22 @@
   }
 
   .social-label {
-    font-size: 7px;
-    letter-spacing: 0.8px;
+    font-size: 0.7rem;
   }
 
   .social-card h3 {
-    font-size: 20px;
+    font-size: 1.1rem;
   }
 
   .contact-page .social-links {
-    gap: 4px;
+    gap: 6px;
   }
 
   .contact-page .social-links a {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    flex: 0 0 36px;
-  }
-
-  .contact-page .social-links a svg {
-    width: 14px;
-    height: 14px;
-  }
-}
-
-@media (max-width: 380px) {
-  .social-card {
-    padding: 18px 10px;
-  }
-
-  .social-card h3 {
-    font-size: 18px;
-  }
-
-  .contact-page .social-links {
-    gap: 3px;
-  }
-
-  .contact-page .social-links a {
-    width: 33px;
-    height: 33px;
-    min-width: 33px;
-    flex: 0 0 33px;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    flex: 0 0 34px;
   }
 
   .contact-page .social-links a svg {

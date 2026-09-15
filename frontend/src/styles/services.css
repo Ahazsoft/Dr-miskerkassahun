@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Idiqlat:wght@200;300;400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .services-section {
   width: 100%;
@@ -6,7 +6,7 @@
   color: #28221f;
   padding: 110px 40px;
   box-sizing: border-box;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .services-container {
@@ -21,32 +21,41 @@
 
 .section-eyebrow {
   display: inline-block;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: #f29452;
   margin-bottom: 14px;
 }
 
+@media (min-width: 768px) {
+  .section-eyebrow {
+    font-size: 0.85rem;
+  }
+}
+
 .section-heading {
   margin: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(36px, 4vw, 50px);
-  line-height: 1.1;
+  font-family: 'Libre Baskerville', serif;
   font-weight: 700;
-  letter-spacing: -2px;
+  font-style: normal;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: #28221f;
 }
 
 .services-intro {
   max-width: 650px;
-  margin: 20px 0 0;
+  margin: 18px 0 0;
   color: #5c534e;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 .services-split {
@@ -78,7 +87,7 @@
   border-radius: 0;
   cursor: pointer;
   overflow: visible;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
@@ -118,9 +127,10 @@
 .nav-id {
   width: 25px;
   flex-shrink: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: #f29452;
 }
 
@@ -129,10 +139,10 @@
 }
 
 .nav-title {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: clamp(16px, 1.8vw, 19px);
-  font-weight: 600;
-  letter-spacing: -0.3px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   line-height: 1.35;
 }
 
@@ -239,16 +249,16 @@
 }
 
 .preview-title {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(30px, 3vw, 42px);
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
   font-weight: 700;
-  letter-spacing: -1.2px;
+  letter-spacing: -0.02em;
   margin: 0 0 10px;
-  line-height: 1.12;
+  line-height: 1.2;
 }
 
 .preview-subtitle {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: #bdb8b3;
@@ -257,8 +267,8 @@
 }
 
 .preview-desc {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.85;
   color: #e1ddd8;
@@ -269,7 +279,7 @@
   position: relative;
   z-index: 2;
   color: #aaa49e;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   text-align: center;
   width: 100%;
@@ -305,13 +315,13 @@
   }
 
   .section-heading {
-    font-size: clamp(32px, 8vw, 42px);
-    letter-spacing: -1.5px;
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    letter-spacing: -0.02em;
   }
 
   .services-intro {
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.8;
   }
 
   .services-split {
@@ -402,16 +412,16 @@
 
   .mobile-details-inner h3 {
     margin: 0 0 8px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 23px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 21px;
     font-weight: 700;
     line-height: 1.25;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.01em;
   }
 
   .mobile-subtitle {
     margin: 0 0 22px;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
     font-weight: 400;
     line-height: 1.6;
@@ -420,10 +430,10 @@
 
   .mobile-description {
     margin: 0;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.8;
     color: #e1ddd8;
   }
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -12,12 +12,12 @@
   overflow: hidden;
   box-sizing: border-box;
   color: #28221f;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .gallery-container {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -29,51 +29,53 @@
 .gallery-eyebrow {
   display: inline-block;
   color: #f29452;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
-  margin-bottom: 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-family: "Poppins", sans-serif;
   text-align: center !important;
 }
 
-.eyebrow-line {
-  width: 40px;
-  height: 1px;
-  background: #f29452;
-  opacity: 0.7;
+@media (min-width: 768px) {
+  .gallery-eyebrow {
+    font-size: 0.85rem;
+  }
 }
 
 .gallery-title {
   margin: 0;
   color: #28221f;
-  font-size: clamp(36px, 4vw, 50px);
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2rem, 8vw, 3.2rem);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -2px;
+  line-height: 1.15;
   text-align: center !important;
 }
 
 .gallery-subtitle {
-  max-width: 600px;
-  margin: 24px auto 0;
+  max-width: 680px;
+  margin: 18px auto 0;
   color: #5c534e;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.85;
+  font-family: "Poppins", sans-serif;
   text-align: center !important;
 }
 
 .gallery-carousel {
   position: relative;
   width: 100%;
-  max-width: 1180px;
+  max-width: 1400px;
   margin: 0 auto;
   overflow: visible;
 }
 
 .gallery-track {
   width: 100%;
-  min-height: 400px;
+  min-height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,10 +100,11 @@
     box-shadow 0.5s ease;
 }
 
+/* Made the active center card wider and slightly taller */
 .gallery-card-active {
-  width: 340px;
-  height: 400px;
-  flex: 0 0 340px;
+  width: 440px;
+  height: 440px;
+  flex: 0 0 440px;
   z-index: 10;
   transform: scale(1);
   opacity: 1;
@@ -110,39 +113,39 @@
 }
 
 .gallery-card-1 {
-  width: 235px;
-  height: 300px;
-  flex: 0 0 235px;
+  width: 290px;
+  height: 330px;
+  flex: 0 0 290px;
   z-index: 8;
   transform: scale(0.96);
   opacity: 0.92;
   filter: saturate(0.9);
-  margin-left: -52px;
-  margin-right: -52px;
-}
-
-.gallery-card-2 {
-  width: 175px;
-  height: 230px;
-  flex: 0 0 175px;
-  z-index: 6;
-  transform: scale(0.9);
-  opacity: 0.72;
-  filter: saturate(0.75);
   margin-left: -55px;
   margin-right: -55px;
 }
 
+.gallery-card-2 {
+  width: 210px;
+  height: 250px;
+  flex: 0 0 210px;
+  z-index: 6;
+  transform: scale(0.9);
+  opacity: 0.72;
+  filter: saturate(0.75);
+  margin-left: -60px;
+  margin-right: -60px;
+}
+
 .gallery-card-3 {
-  width: 125px;
-  height: 160px;
-  flex: 0 0 125px;
+  width: 150px;
+  height: 180px;
+  flex: 0 0 150px;
   z-index: 4;
   transform: scale(0.84);
   opacity: 0.45;
   filter: saturate(0.6);
-  margin-left: -58px;
-  margin-right: -58px;
+  margin-left: -65px;
+  margin-right: -65px;
 }
 
 .gallery-card:hover {
@@ -169,9 +172,11 @@
 
 .gallery-card-title {
   margin: 0;
-  font-size: 14px;
-  font-weight: 700;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1.3;
+  color: #28221f;
   text-align: center !important;
 }
 
@@ -180,14 +185,15 @@
   margin-top: 6px;
   overflow: hidden;
   color: #82766e;
-  font-size: 10px;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.9px;
+  letter-spacing: 0.12em;
   line-height: 1.3;
   text-align: center !important;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
+  font-family: "Poppins", sans-serif;
 }
 
 .gallery-image {
@@ -206,7 +212,6 @@
     opacity: 0.35;
     transform: scale(1.035);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -221,7 +226,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .carousel-controls button {
@@ -249,268 +254,60 @@
   transform: scale(1.08);
 }
 
-.gallery-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 50px;
-  color: #82766e;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-}
-
-.footer-line {
-  width: 45px;
-  height: 1px;
-  background: rgba(40, 34, 31, 0.25);
-}
-
-@media (max-width: 1000px) {
-  .gallery-container {
-    max-width: 900px;
-  }
-
-  .gallery-carousel {
-    max-width: 850px;
-  }
-
-  .gallery-track {
-    min-height: 360px;
-  }
-
+@media (max-width: 1200px) {
   .gallery-card-active {
-    width: 300px;
-    height: 360px;
-    flex-basis: 300px;
+    width: 380px;
+    height: 400px;
+    flex-basis: 380px;
   }
-
   .gallery-card-1 {
-    width: 205px;
-    height: 265px;
-    flex-basis: 205px;
-    margin-left: -32px;
-    margin-right: -32px;
+    width: 250px;
+    height: 300px;
+    flex-basis: 250px;
   }
-
   .gallery-card-2 {
-    width: 150px;
-    height: 200px;
-    flex-basis: 150px;
-    margin-left: -35px;
-    margin-right: -35px;
-  }
-
-  .gallery-card-3 {
-    width: 105px;
-    height: 140px;
-    flex-basis: 105px;
-    margin-left: -38px;
-    margin-right: -38px;
+    width: 180px;
+    height: 230px;
+    flex-basis: 180px;
   }
 }
 
 @media (max-width: 850px) {
-  .gallery-section {
-    padding: 105px 18px 75px;
-  }
-
-  .gallery-track {
-    min-height: 330px;
-  }
-
   .gallery-card-active {
-    width: 270px;
-    height: 330px;
-    flex-basis: 270px;
+    width: 300px;
+    height: 350px;
+    flex-basis: 300px;
   }
-
   .gallery-card-1 {
-    width: 190px;
-    height: 245px;
-    flex-basis: 190px;
-    margin-left: -38px;
-    margin-right: -38px;
+    width: 200px;
+    height: 250px;
+    flex-basis: 200px;
   }
-
   .gallery-card-2 {
-    width: 135px;
-    height: 185px;
-    flex-basis: 135px;
-    margin-left: -40px;
-    margin-right: -40px;
+    width: 140px;
+    height: 190px;
+    flex-basis: 140px;
   }
-
   .gallery-card-3 {
     display: none;
   }
 }
 
 @media (max-width: 600px) {
-  .gallery-section {
-    padding: 90px 15px 65px;
-  }
-
-  .gallery-header {
-    margin-bottom: 38px;
-  }
-
-  .gallery-eyebrow {
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 13px;
-  }
-
-  .eyebrow-line {
-    width: 28px;
-  }
-
-  .gallery-title {
-    font-size: clamp(34px, 9vw, 42px);
-    letter-spacing: -1.5px;
-  }
-
-  .gallery-subtitle {
-    padding: 0 10px;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .desktop-only {
-    display: none;
-  }
-
-  .gallery-track {
-    min-height: 280px;
-  }
-
   .gallery-card-active {
-    width: 230px;
-    height: 280px;
-    flex-basis: 230px;
+    width: 240px;
+    height: 300px;
+    flex-basis: 240px;
   }
-
   .gallery-card-1 {
     width: 160px;
-    height: 215px;
+    height: 220px;
     flex-basis: 160px;
-    margin-left: -42px;
-    margin-right: -42px;
   }
-
   .gallery-card-2 {
-    width: 115px;
+    width: 110px;
     height: 160px;
-    flex-basis: 115px;
-    margin-left: -45px;
-    margin-right: -45px;
-  }
-
-  .gallery-card-content {
-    flex-basis: 70px;
-    padding: 10px 11px 9px;
-  }
-
-  .gallery-card-title {
-    font-size: 12px;
-  }
-
-  .gallery-card-category {
-    font-size: 9px;
-    margin-top: 5px;
-  }
-
-  .carousel-controls {
-    margin-top: 22px;
-  }
-
-  .carousel-controls button {
-    width: 44px;
-    height: 44px;
-  }
-
-  .gallery-footer {
-    margin-top: 38px;
-    font-size: 8px;
-    letter-spacing: 1.8px;
-  }
-}
-
-@media (max-width: 430px) {
-  .gallery-section {
-    padding: 75px 10px 50px;
-  }
-
-  .gallery-title {
-    font-size: 34px;
-    letter-spacing: -1.2px;
-  }
-
-  .gallery-subtitle {
-    font-size: 13px;
-  }
-
-  .gallery-track {
-    min-height: 245px;
-  }
-
-  .gallery-card-active {
-    width: 200px;
-    height: 245px;
-    flex-basis: 200px;
-  }
-
-  .gallery-card-1 {
-    width: 140px;
-    height: 185px;
-    flex-basis: 140px;
-    margin-left: -40px;
-    margin-right: -40px;
-  }
-
-  .gallery-card-2 {
-    width: 100px;
-    height: 140px;
-    flex-basis: 100px;
-    margin-left: -42px;
-    margin-right: -42px;
-  }
-
-  .gallery-footer {
-    gap: 8px;
-  }
-
-  .footer-line {
-    width: 25px;
-  }
-}
-
-@media (max-width: 360px) {
-  .gallery-title {
-    font-size: 32px;
-  }
-
-  .gallery-card-active {
-    width: 190px;
-    height: 230px;
-    flex-basis: 190px;
-  }
-
-  .gallery-card-1 {
-    width: 125px;
-    height: 170px;
-    flex-basis: 125px;
-    margin-left: -38px;
-    margin-right: -38px;
-  }
-
-  .gallery-card-2 {
-    width: 90px;
-    height: 125px;
-    flex-basis: 90px;
-    margin-left: -40px;
-    margin-right: -40px;
+    flex-basis: 110px;
   }
 }
 
