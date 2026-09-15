@@ -82,7 +82,7 @@ export default function Affilations() {
           .logo-box {
             width: 100%;
             height: 100%;
-            background:  white;
+            background:  #f29452;
             border-radius: 6px;
             display: flex;
             align-items: center;
