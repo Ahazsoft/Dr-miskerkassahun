@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from '../assets/images/img2.jpg';
+import img1 from '../assets/images/img2.JPG';
 import Principles from './Principles';
 import '../styles/about.css';
 
