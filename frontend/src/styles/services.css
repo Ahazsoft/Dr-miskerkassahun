@@ -21,7 +21,7 @@
 
 .section-eyebrow {
   display: inline-block;
-  font-family: "Poppins", sans-serif;
+  font-family: 'exo';
   font-style: normal;
   font-size: 0.75rem;
   font-weight: 700;
@@ -39,7 +39,7 @@
 
 .section-heading {
   margin: 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-weight: 700;
   font-style: normal;
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -172,16 +172,13 @@
   backface-visibility: hidden;
 }
 
+/* Hover styles for arrow */
 .service-nav-item:hover .nav-arrow {
   background: #f29452;
   color: #28221f;
   transform: rotate(45deg);
   border-radius: 0;
   box-shadow: 0 4px 12px rgba(242, 148, 82, 0.35);
-}
-
-.service-nav-item:hover .nav-arrow .nav-arrow-hover-icon {
-  transform: rotate(-45deg);
 }
 
 .nav-arrow .nav-arrow-hover-icon {
@@ -196,23 +193,11 @@
   display: block;
 }
 
-.service-nav-item.active .nav-arrow {
-  background: #f29452;
-  color: #28221f;
-  transform: rotate(45deg);
-}
-
-.service-nav-item.active .nav-arrow .nav-arrow-hover-icon {
+.service-nav-item:hover .nav-arrow .nav-arrow-hover-icon {
   transform: rotate(-45deg);
 }
 
-.service-nav-item.active .nav-arrow .nav-arrow-icon {
-  display: none;
-}
-
-.service-nav-item.active .nav-arrow .nav-arrow-hover-icon {
-  display: block;
-}
+/* Removed active styles for .nav-arrow so it stays transparent and doesn't rotate unless hovered */
 
 .services-preview-panel {
   position: relative;
@@ -249,7 +234,7 @@
 }
 
 .preview-title {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: clamp(1.8rem, 2.8vw, 2.4rem);
   font-weight: 700;
   letter-spacing: -0.02em;

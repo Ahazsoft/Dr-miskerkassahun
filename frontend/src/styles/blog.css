@@ -67,7 +67,7 @@
   letter-spacing: 0.12em;
   color: #f49d56;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+ font-family: 'exo';
 }
 
 @media (min-width: 768px) {
@@ -77,7 +77,7 @@
 }
 
 .section-main-title {
-  font-family: 'Libre Baskerville', serif;
+ font-family: 'exo';
   font-size: clamp(2rem, 8vw, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
@@ -116,7 +116,7 @@
   transition: background-color 0.3s ease;
   width: 100%;
   max-width: 240px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'exo';
 }
 
 @media (min-width: 640px) {
@@ -138,7 +138,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  font-family: "Poppins", sans-serif;
+  font-family: 'exo';
 }
 
 @media (min-width: 768px) {
@@ -293,7 +293,7 @@
 }
 
 .card-content h2 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: 1.2rem;
   font-weight: 600;
   color: #111827;
@@ -524,7 +524,7 @@
 }
 
 .post-content h3 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: 1.15rem;
   font-weight: 600;
   color: #111827;
@@ -580,7 +580,7 @@
 }
 
 .widget-title {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: 1.05rem;
   font-weight: 600;
   color: #111827;
@@ -654,6 +654,7 @@
   gap: 10px;
   cursor: pointer;
   transition: opacity 0.2s ease;
+
 }
 
 @media (min-width: 768px) {
@@ -811,6 +812,7 @@
 
 @media (min-width: 768px) {
   .no-results h3 {
+    font-family: 'exo';
     font-size: 1.35rem;
     margin-bottom: 8px;
   }

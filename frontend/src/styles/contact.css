@@ -41,7 +41,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #f29452;
-  font-family: "Poppins", sans-serif;
+  font-family: 'exo';
   text-align: center !important;
 }
 
@@ -53,7 +53,7 @@
 
 .contact-header h1 {
   margin: 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: clamp(2rem, 8vw, 3.2rem);
   line-height: 1.15;
   font-weight: 700;
@@ -94,7 +94,7 @@
 
 .form-heading h2 {
   margin: 0 0 8px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: 1.6rem;
   line-height: 1.15;
   font-weight: 700;
@@ -207,7 +207,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 6px 6px 6px 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'exo';
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -298,7 +298,7 @@
   position: relative;
   z-index: 2;
   margin: 0 0 20px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
   line-height: 1.15;
   font-weight: 700;
@@ -397,7 +397,7 @@
 
 .social-card h3 {
   margin: 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-size: 1.35rem;
   line-height: 1.2;
   color: #28221f;

@@ -19,7 +19,7 @@ export default function Footer() {
   const socialLinks = [
     {
       name: 'YouTube',
-      url: 'http://www.youtube.com/@MiskerKassahun',
+      url: 'https://www.youtube.com/@MiskerKassahun_Mika',
       icon: <FaYoutube />,
     },
     {
@@ -67,6 +67,7 @@ export default function Footer() {
             <h2
               style={{
                 margin: '0 0 20px',
+                 fontFamily: 'exo',
                 fontSize: '30px',
                 fontWeight: '700',
                 letterSpacing: '-0.5px',
@@ -80,6 +81,7 @@ export default function Footer() {
                 margin: 0,
                 maxWidth: '430px',
                 color: '#cfc8c4',
+                 fontFamily: '"Poppins", sans-serif',
                 fontSize: '15px',
                 lineHeight: '1.8',
               }}
@@ -112,6 +114,7 @@ export default function Footer() {
                     justifyContent: 'center',
                     color: '#ffffff',
                     background: 'transparent',
+                     fontFamily: '"Poppins", sans-serif',
                     fontSize: '18px',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease',
@@ -138,6 +141,7 @@ export default function Footer() {
             <h3
               style={{
                 margin: '0 0 25px',
+                 fontFamily: 'exo',
                 fontSize: '16px',
                 fontWeight: '700',
                 letterSpacing: '1px',
@@ -161,6 +165,7 @@ export default function Footer() {
                   style={{
                     color: '#cfc8c4',
                     textDecoration: 'none',
+                     fontFamily: '"Poppins", sans-serif',
                     fontSize: '15px',
                     transition: 'color 0.3s ease',
                   }}
@@ -181,6 +186,7 @@ export default function Footer() {
             <h3
               style={{
                 margin: '0 0 25px',
+                 fontFamily: 'exo',
                 fontSize: '16px',
                 fontWeight: '700',
                 letterSpacing: '1px',
@@ -194,6 +200,7 @@ export default function Footer() {
               style={{
                 margin: '0 0 25px',
                 color: '#cfc8c4',
+                 fontFamily: '"Poppins", sans-serif',
                 fontSize: '15px',
                 lineHeight: '1.8',
                 maxWidth: '300px',
@@ -213,6 +220,7 @@ export default function Footer() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 textDecoration: 'none',
+                 fontFamily: 'exo',
                 fontSize: '13px',
                 fontWeight: '700',
                 letterSpacing: '2px',
@@ -247,6 +255,7 @@ export default function Footer() {
               margin: 0,
               color: '#aaa19c',
               fontSize: '13px',
+               fontFamily: '"Poppins", sans-serif',
             }}
           >
             Copyright © 2026 AHAZ. All rights reserved.
@@ -257,6 +266,7 @@ export default function Footer() {
               margin: 0,
               color: '#aaa19c',
               fontSize: '13px',
+               fontFamily: '"Poppins", sans-serif',
             }}
           >
             Dr. Misker Kassahun

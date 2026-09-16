@@ -13,7 +13,7 @@ body {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+ font-family: 'exo';
 }
 
 .navbar {
@@ -95,9 +95,9 @@ body {
   position: relative;
   display: inline-block;
   padding: 5px 0;
-  font-family: "Poppins", sans-serif;
+ font-family: 'exo';
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.4;
   letter-spacing: 0.02em;
   color: #4a423d;
@@ -140,7 +140,7 @@ body {
   min-width: 195px;
   height: 52px;
   padding: 0 28px;
-  font-family: "Poppins", sans-serif;
+ font-family: 'exo';
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;

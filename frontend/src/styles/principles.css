@@ -21,20 +21,20 @@
 
 .principles-heading {
   width: 100%;
-  margin-bottom: 55px;
+  margin-bottom: 45px;
   position: relative;
 }
 
 .section-eyebrow {
   display: inline-block;
   color: #f29452;
-  font-family: "Poppins", sans-serif;
+  font-family: 'exo';
   font-weight: 700;
   font-style: normal;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -46,7 +46,7 @@
 .principles-heading h3 {
   margin: 0;
   color: #28221f;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'exo';
   font-weight: 700;
   line-height: 1.15;
   font-style: normal;
@@ -56,25 +56,25 @@
 
 .principles-heading p {
   max-width: 650px;
-  margin: 18px 0 0;
+  margin: 14px 0 0;
   color: #5c534e;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 17px;
-  line-height: 1.85;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .principles-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 25px;
+  gap: 20px;
   align-items: stretch;
 }
 
 .principle-card {
   position: relative;
-  min-height: 450px;
-  padding: 34px 28px 28px;
+  min-height: 380px;
+  padding: 24px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,7 +86,7 @@
     93% 100%,
     0 100%
   );
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.4s cubic-bezier(.2, .8, .2, 1),
     box-shadow 0.4s ease,
@@ -94,8 +94,8 @@
 }
 
 .principle-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.22);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
 }
 
 .principle-card::after {
@@ -129,12 +129,12 @@
 }
 
 .icon-wrapper {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 34px;
+  margin-bottom: 16px;
   transition:
     transform 0.4s cubic-bezier(.2, .8, .2, 1),
     background-color 0.3s ease;
@@ -151,17 +151,17 @@
 }
 
 .principle-card:hover .icon-wrapper {
-  transform: translateY(-5px) rotate(-5deg);
+  transform: translateY(-4px) rotate(-5deg);
 }
 
 .principle-card h4 {
   position: relative;
   z-index: 2;
-  margin: 0 0 20px;
-  font-family: 'Libre Baskerville', serif;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.3;
+  margin: 0 0 14px;
+  font-family: 'exo';
+  font-size: 20px; /* Restored original title font size */
+  font-weight: 400;
+  line-height: 1.25;
   letter-spacing: -0.01em;
   white-space: pre-line;
   transition:
@@ -187,9 +187,9 @@
   z-index: 2;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 11.5px; /* Reduced description font size to save height */
   font-weight: 400;
-  line-height: 1.85;
+  line-height: 1.65;
   transition: color 0.3s ease;
 }
 
@@ -207,9 +207,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 30px;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  margin-top: 18px;
+  font-family: 'exo';
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -225,8 +225,8 @@
 }
 
 .arrow-wrapper {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,19 +257,19 @@
 
   .principles-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 20px;
   }
 
   .principle-card {
-    min-height: 420px;
+    min-height: auto;
   }
 
   .principle-card h4 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .principle-card p {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
@@ -279,47 +279,46 @@
   }
 
   .principles-heading {
-    margin-bottom: 45px;
+    margin-bottom: 35px;
   }
 
   .principles-heading p {
-    font-size: 17px;
-    line-height: 1.85;
-    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 12px;
   }
 
   .principles-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   .principle-card {
-    min-height: auto;
-    padding: 32px 25px 25px;
+    padding: 24px 20px;
   }
 
   .icon-wrapper {
-    width: 52px;
-    height: 52px;
-    margin-bottom: 28px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 16px;
   }
 
   .principle-card h4 {
-    font-size: 24px;
-    margin-bottom: 18px;
+    font-size: 20px;
+    margin-bottom: 14px;
   }
 
   .principle-card p {
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .card-bottom {
-    margin-top: 40px;
+    margin-top: 24px;
   }
 
   .principle-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
   }
 }
 
@@ -329,46 +328,46 @@
   }
 
   .principles-heading {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   .principles-heading p {
-    font-size: 15px;
-    line-height: 1.75;
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .principles-grid {
-    gap: 16px;
+    gap: 14px;
   }
 
   .principle-card {
-    padding: 28px 21px 22px;
+    padding: 20px 16px;
   }
 
   .icon-wrapper {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 25px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
   }
 
   .principle-card h4 {
-    font-size: 21px;
-    line-height: 1.25;
+    font-size: 18px;
+    line-height: 1.2;
   }
 
   .principle-card p {
-    font-size: 14px;
-    line-height: 1.75;
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .card-bottom {
-    margin-top: 32px;
-    font-size: 11px;
+    margin-top: 20px;
+    font-size: 10.5px;
   }
 
   .arrow-wrapper {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
   }
 }
 

@@ -54,7 +54,7 @@
 }
 
 .detail-header h1 {
-  font-family: 'Libre Baskerville', serif;
+ font-family: 'exo';
   font-size: clamp(36px, 4vw, 50px);
   line-height: 1.2;
   margin: 0 0 16px;

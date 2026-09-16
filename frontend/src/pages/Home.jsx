@@ -7,6 +7,7 @@ import Gallery from './Gallery';
 import Services from './Services';
 import Contact from './Contact';
 import '../styles/Home.css';
+import { Video } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -69,7 +70,7 @@ export default function Home() {
               </p>
 
               <Link
-                to="/about"
+                to="/about-detail"
                 className="
                   home-hero-button
                   flex items-center justify-center
@@ -109,8 +110,9 @@ export default function Home() {
         </div>
       </section>
 
-      <Affilations />
+     
       <About />
+       <Affilations />
       <Services />
       
     </>
