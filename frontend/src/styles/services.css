@@ -23,7 +23,7 @@
   display: inline-block;
   font-family: 'exo';
   font-style: normal;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -42,7 +42,7 @@
   font-family: 'exo';
   font-weight: 700;
   font-style: normal;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: 60px;
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #28221f;
@@ -297,6 +297,7 @@
 
   .services-header {
     margin-bottom: 35px;
+    margin-top: 18px;
   }
 
   .section-heading {
@@ -371,10 +372,10 @@
     background: #464b50;
     color: #ffffff;
     border-radius: 0;
-    margin-top: -3px;
+    margin-top: 0;
     overflow: hidden;
     opacity: 0;
-    clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px);
+    clip-path: none;
     transition:
       grid-template-rows 0.4s ease,
       opacity 0.3s ease;
@@ -397,7 +398,7 @@
 
   .mobile-details-inner h3 {
     margin: 0 0 8px;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'exo';
     font-size: 21px;
     font-weight: 700;
     line-height: 1.25;

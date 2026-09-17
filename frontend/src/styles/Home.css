@@ -90,10 +90,28 @@ font-family: 'exo';
   font-size: 17px;
 }
 
+.home-hero-secondary-description {
+  width: 100%;
+  max-width: 480px;
+  margin: -10px 0 20px;
+  color: #5c534e;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .home-hero-secondary-description {
+    text-align: center;
+  }
+}
+
 .home-hero-button {
   margin-top: 20px;
   font-family: 'exo';
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.08em;

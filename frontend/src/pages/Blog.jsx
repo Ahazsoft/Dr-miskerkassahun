@@ -208,7 +208,7 @@ export default function Blog() {
                 {isSearching && (
                   <button 
                     onClick={() => setSearchTerm('')} 
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '12px', color: '#f49d56', display: 'flex', alignItems: 'center', gap: '2px' }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '15px', color: '#f49d56', display: 'flex', alignItems: 'center', gap: '2px' }}
                   >
                     <X size={14} /> Clear
                   </button>

@@ -33,7 +33,7 @@
 .gallery-eyebrow {
   display: inline-block;
   color: #f29452;
-  font-size: 0.75rem;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -44,7 +44,7 @@
 
 @media (min-width: 768px) {
   .gallery-eyebrow {
-    font-size: 0.85rem;
+    font-size: 15px;
   }
 }
 
@@ -52,7 +52,7 @@
   margin: 0;
   color: #28221f;
   font-family: 'exo';
-  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.15;
   text-align: center !important;
@@ -245,6 +245,7 @@
   background: #3b4042;
   color: #ffffff;
   cursor: pointer;
+  font-size: 15px;
   transition:
     background 0.3s ease,
     color 0.3s ease,
@@ -303,6 +304,27 @@
     padding-left: 15px;
     padding-right: 15px;
   }
+
+  .gallery-header {
+    margin-bottom: 28px;
+  }
+
+  .gallery-track {
+    min-height: 360px;
+  }
+
+  .carousel-controls {
+    margin-top: 20px;
+  }
+
+  .gallery-card-category {
+    font-size: 10px !important;
+  }
+
+  .gallery-card-title {
+    font-size: 15px !important;
+  }
+
   .gallery-card-active {
     width: 260px;
     height: 320px;

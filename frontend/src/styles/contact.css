@@ -36,7 +36,7 @@
 .gallery-eyebrow {
   display: inline-block;
   margin-bottom: 14px;
-  font-size: 0.75rem;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -54,7 +54,7 @@
 .contact-header h1 {
   margin: 0;
   font-family: 'exo';
-  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-size: 60px;
   line-height: 1.15;
   font-weight: 700;
   color: #28221f;
@@ -95,7 +95,7 @@
 .form-heading h2 {
   margin: 0 0 8px;
   font-family: 'exo';
-  font-size: 1.6rem;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
   line-height: 1.15;
   font-weight: 700;
   color: #28221f;
@@ -208,7 +208,7 @@
   justify-content: space-between;
   padding: 6px 6px 6px 20px;
   font-family: 'exo';
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -475,8 +475,17 @@
 }
 
 @media (max-width: 700px) {
+  .contact-page {
+    padding-bottom: 28px;
+  }
+
   .contact-header {
     margin-bottom: 40px;
+    text-align: left !important;
+  }
+
+  .contact-header .gallery-eyebrow {
+    text-align: left !important;
   }
 
   .contact-header > p {
@@ -540,7 +549,7 @@
   .submit-btn {
     height: 56px;
     padding-left: 16px;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .submit-icon {

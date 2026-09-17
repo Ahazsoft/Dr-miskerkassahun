@@ -107,3 +107,62 @@ body textarea {
     text-align: left !important;
   }
 }
+
+/* Keep typography comfortably proportioned on phones across every page. */
+@media (max-width: 700px) {
+  .page-transition h1 {
+    font-size: clamp(34px, 10vw, 44px) !important;
+  }
+
+  .page-transition .home-hero-title {
+    font-size: clamp(48px, 13vw, 56px) !important;
+  }
+
+  .page-transition .about-title,
+  .page-transition .gallery-title,
+  .page-transition .section-heading,
+  .page-transition .section-main-title,
+  .page-transition .contact-header h1,
+  .page-transition .more-blogs-header h1,
+  .page-transition .principles-heading h3,
+  .page-transition .principle-detail-copy h1,
+  .page-transition .detail-header h1,
+  .page-transition .section-subheading {
+    font-size: clamp(46px, 11vw, 52px) !important;
+  }
+
+  .page-transition h2 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+  }
+
+  .page-transition h3 {
+    font-size: clamp(18px, 5.5vw, 24px) !important;
+  }
+
+  .page-transition h4,
+  .page-transition h5,
+  .page-transition h6 {
+    font-size: 18px !important;
+  }
+
+  .page-transition p,
+  .page-transition p[class] {
+    font-size: 15px !important;
+  }
+
+  .page-transition button,
+  .page-transition a,
+  .page-transition label,
+  .page-transition input,
+  .page-transition select,
+  .page-transition textarea {
+    font-size: 13px !important;
+  }
+
+  .page-transition [class*="eyebrow"],
+  .page-transition [class*="kicker"],
+  .page-transition [class*="label"],
+  .page-transition [class*="category"] {
+    font-size: 12px !important;
+  }
+}

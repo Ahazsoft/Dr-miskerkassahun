@@ -31,7 +31,7 @@
   font-family: 'exo';
   font-weight: 700;
   font-style: normal;
-  font-size: 0.75rem;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -39,7 +39,7 @@
 
 @media (min-width: 768px) {
   .section-eyebrow {
-    font-size: 0.85rem;
+    font-size: 15px;
   }
 }
 
@@ -50,7 +50,7 @@
   font-weight: 700;
   line-height: 1.15;
   font-style: normal;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: 60px;
   letter-spacing: -0.02em;
 }
 
@@ -159,7 +159,7 @@
   z-index: 2;
   margin: 0 0 14px;
   font-family: 'exo';
-  font-size: 20px; /* Restored original title font size */
+  font-size: 27px; /* Restored original title font size */
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -209,7 +209,7 @@
   justify-content: space-between;
   margin-top: 18px;
   font-family: 'exo';
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;

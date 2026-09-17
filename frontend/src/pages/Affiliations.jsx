@@ -144,7 +144,7 @@ export default function Affilations() {
           .gallery-eyebrow {
             display: inline-block;
             color: #f29452;
-            font-size: 0.7rem;
+            font-size: 15px;
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
@@ -154,14 +154,14 @@ export default function Affilations() {
 
           @media (min-width: 768px) {
             .gallery-eyebrow {
-              font-size: 0.8rem;
+              font-size: 15px;
             }
           }
 
           .gallery-title {
             margin: 0;
             color: #f5f3f2;
-            font-size: clamp(1.6rem, 5vw, 2.4rem);
+            font-size: 60px;
             font-family: 'exo', sans-serif;
             font-weight: 700;
             line-height: 1.15;
@@ -282,7 +282,7 @@ export default function Affilations() {
             background: #f29452;
             color: #28221f;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             transition: background 0.3s ease, transform 0.3s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);

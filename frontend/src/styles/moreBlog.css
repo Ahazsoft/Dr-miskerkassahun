@@ -19,7 +19,7 @@
           gap: 8px;
           color: #5c534e;
           font-family: 'exo';
-          font-size: 11px;
+          font-size: 15px;
           font-weight: 800;
           letter-spacing: 1.4px;
           text-decoration: none;
@@ -35,7 +35,7 @@
         .more-blog-category {
           color: #f29452;
           font-family: 'exo';
-          font-size: 10px;
+          font-size: 15px;
           font-weight: 800;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -45,7 +45,7 @@
  
   color: #28221f;
   font-family: 'exo';
-  font-size: clamp(36px, 4vw, 50px);
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.5px;

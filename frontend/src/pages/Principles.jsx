@@ -84,14 +84,7 @@ export default function Principles() {
                   </div>
 
                   {/* Title */}
-                  <h4>
-                    {item.title.split('\n').map((line, index) => (
-                      <React.Fragment key={index}>
-                        {line}
-                        {index < item.title.split('\n').length - 1 && <br />}
-                      </React.Fragment>
-                    ))}
-                  </h4>
+                  <h4>{item.title.replace(/\n/g, ' ')}</h4>
 
                   {/* Description */}
                   <p>{item.desc}</p>

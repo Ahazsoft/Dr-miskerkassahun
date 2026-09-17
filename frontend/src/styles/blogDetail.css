@@ -20,7 +20,7 @@
   align-items: center;
   gap: 8px;
   color: #5c534e;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 
 .detail-header h1 {
  font-family: 'exo';
-  font-size: clamp(36px, 4vw, 50px);
+  font-size: clamp(36px, 4vw, 60px);
   line-height: 1.2;
   margin: 0 0 16px;
   font-weight: 700;

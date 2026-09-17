@@ -221,7 +221,7 @@ export default function Footer() {
                 justifyContent: 'center',
                 textDecoration: 'none',
                  fontFamily: 'exo',
-                fontSize: '13px',
+                fontSize: '15px',
                 fontWeight: '700',
                 letterSpacing: '2px',
                 clipPath:

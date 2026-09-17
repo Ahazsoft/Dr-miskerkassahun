@@ -68,7 +68,6 @@ export default function Home() {
                 <br className="hidden sm:block" />
                 Volunteer.
               </p>
-
               <Link
                 to="/about-detail"
                 className="

@@ -62,7 +62,7 @@
 }
 
 .section-kicker {
-  font-size: 0.75rem;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: #f49d56;
@@ -78,7 +78,7 @@
 
 .section-main-title {
  font-family: 'exo';
-  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.15;
   color: #2b231d;
@@ -117,6 +117,7 @@
   width: 100%;
   max-width: 240px;
   font-family: 'exo';
+  
 }
 
 @media (min-width: 640px) {
@@ -135,7 +136,7 @@
 
 .custom-btn-text {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
   font-family: 'exo';
@@ -143,7 +144,7 @@
 
 @media (min-width: 768px) {
   .custom-btn-text {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
@@ -747,7 +748,7 @@
   background: none;
   border: none;
   color: #4b5563;
-  font-size: 17px;
+  font-size: 15px;
   padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
@@ -757,7 +758,7 @@
 
 @media (min-width: 768px) {
   .archive-list button {
-    font-size: 17px;
+    font-size: 15px;
     padding: 8px 12px;
   }
 }
